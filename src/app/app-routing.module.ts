@@ -2,11 +2,26 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./layout/login/login.component";
 import { LayoutComponent } from "./layout/layout/layout.component";
+import { AuthRedirectComponent } from "./layout/auth-redirect/auth-redirect.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "/login" },
+  { path: "", pathMatch: "full", redirectTo: "/app/dashboard" },
   { path: "login", component: LoginComponent },
-  { path: "", component: LayoutComponent, children: [] },
+  { path: "auth/redirect", component: AuthRedirectComponent },
+  {
+    path: "app",
+    component: LayoutComponent,
+    children: [
+      {
+        path: "dashboard",
+        loadChildren: () =>
+          import("@modules/dashboard/dashboard.module").then(
+            (m) => m.DashboardModule
+          ),
+      },
+    ],
+  },
+  { path: "**", redirectTo: "/app/dashboard" },
 ];
 
 @NgModule({

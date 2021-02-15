@@ -10,6 +10,7 @@ import { LoginComponent } from "./layout/login/login.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CoreModule } from "@core/core.module";
 import { SharedModule } from "@shared/shared.module";
+import { AuthRedirectComponent } from "./layout/auth-redirect/auth-redirect.component";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from "@shared/shared.module";
     HeaderComponent,
     FooterComponent,
     LoginComponent,
+    AuthRedirectComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,6 @@ import { SharedModule } from "@shared/shared.module";
     CoreModule,
     SharedModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
