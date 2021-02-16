@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { mouseParallaxHelper } from "@core/helpers/mouse-parallax.helper";
+import { mouseParallaxHelper } from "@core/helper/mouse-parallax.helper";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "@core/http/auth.service";
-import { TokenWrapper } from "@core/models/token.model";
+import { TokenWrapper } from "@core/model/token.model";
 import { plainToClass } from "class-transformer";
 
 @Component({
-  selector: "app-auth-redirect",
+  selector: "siltstride-auth-redirect",
   template: `
     <div
       #foregroundSpinner
@@ -34,7 +34,7 @@ export class AuthRedirectComponent implements OnInit {
       this.route.snapshot.fragment
     );
     this.authService.login(tokenWrapper).subscribe(() => {
-      this.router.navigate(["/dashboard"]);
+      this.router.navigate(["app", "dashboard"]);
     });
   }
 

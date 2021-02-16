@@ -1,7 +1,7 @@
 import { Transform, TransformFnParams, Type } from "class-transformer";
 
 export class TokenWrapper {
-  // tslint:disable-next-line:variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private access_token: string;
 
   /**
@@ -12,7 +12,7 @@ export class TokenWrapper {
     return this.access_token;
   }
 
-  // tslint:disable-next-line:variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private token_type: string;
 
   /**
@@ -30,7 +30,7 @@ export class TokenWrapper {
     expiration.setSeconds(expiration.getSeconds() + params.value);
     return expiration;
   })
-  // tslint:disable-next-line:variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private expires_in: Date;
 
   /**
@@ -41,7 +41,7 @@ export class TokenWrapper {
     return this.expires_in;
   }
 
-  // tslint:disable-next-line:variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle, id-blacklist, id-match
   private _scope: Array<string>;
   /**
    * @description The scopes associated to the token

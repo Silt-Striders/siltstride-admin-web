@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "@core/http/auth.service";
 import { Observable } from "rxjs";
-import { User } from "@core/models/user.model";
+import { User } from "@core/model/user.model";
 import { map } from "rxjs/operators";
 
 @Component({
-  selector: "app-header",
+  selector: "siltstride-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })

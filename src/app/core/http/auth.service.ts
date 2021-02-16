@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { CoreModule } from "@core/core.module";
 import { BehaviorSubject, Observable } from "rxjs";
-import { TokenWrapper } from "@core/models/token.model";
+import { TokenWrapper } from "@core/model/token.model";
 import { Router } from "@angular/router";
 import { plainToClass } from "class-transformer";
 import { map, tap } from "rxjs/operators";
-import { User } from "@core/models/user.model";
+import { User } from "@core/model/user.model";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "@env";
 
@@ -44,10 +44,7 @@ export class AuthService {
       .get<User>(`${environment.discordApiRootUrl}/users/@me`, {
         headers,
       })
-      .pipe(
-        map((user: User) => plainToClass(User, user)),
-        tap(console.log)
-      );
+      .pipe(map((user: User) => plainToClass(User, user)));
     // .pipe(catchError((error) => this.router.navigate(["/login"])));
   }
 

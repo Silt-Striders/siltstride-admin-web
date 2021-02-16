@@ -28,8 +28,8 @@
       "@env": [
         "environments/environment"
       ],
-      "@modules/*": [
-        "./app/modules/*"
+      "@module/*": [
+        "app/module/*"
       ],
       "@data/*": [
         "app/data/*"

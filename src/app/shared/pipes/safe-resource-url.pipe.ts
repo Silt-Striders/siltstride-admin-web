@@ -6,7 +6,7 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 })
 export class SafeResourceUrlPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}
-  public transform(url: string, ...args: any[]): SafeResourceUrl {
+  public transform(url: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }

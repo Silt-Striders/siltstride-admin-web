@@ -1,7 +1,7 @@
-export function mouseParallaxHelper(
+export const mouseParallaxHelper = (
   element: HTMLElement,
   event: MouseEvent
-): void {
+): void => {
   /*
    * Used this Stack Overflow post to determine parallax logic:
    * https://stackoverflow.com/questions/56025761/how-do-parallax-mouse-move-effect-pure-javascript
@@ -16,4 +16,4 @@ export function mouseParallaxHelper(
     "--mouseY",
     (event.clientY * 16) / offsetHeight + "%"
   );
-}
+};

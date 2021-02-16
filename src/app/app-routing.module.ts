@@ -13,11 +13,9 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: "dashboard",
+        path: "",
         loadChildren: () =>
-          import("@modules/dashboard/dashboard.module").then(
-            (m) => m.DashboardModule
-          ),
+          import("@module/home/home.module").then((m) => m.HomeModule),
       },
     ],
   },

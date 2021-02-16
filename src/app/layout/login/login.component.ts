@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { environment } from "@env";
-import { mouseParallaxHelper } from "@core/helpers/mouse-parallax.helper";
+import { mouseParallaxHelper } from "@core/helper/mouse-parallax.helper";
 
 @Component({
-  selector: "app-login",
+  selector: "siltstride-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
 })

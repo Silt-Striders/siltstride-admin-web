@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { environment } from "@env";
 
 @Component({
-  selector: "app-dashboard",
+  selector: "siltstride-dashboard",
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.scss"],
 })
