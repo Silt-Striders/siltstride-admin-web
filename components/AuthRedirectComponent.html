@@ -1,0 +1,572 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>siltstride-admin-web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/readthedocs.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">siltstride-admin-web documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AuthRedirectComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/layout/auth-redirect/auth-redirect.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component handling the redirect from <a href="https://discord.com/developers/docs/topics/oauth2#implicit-grant">Discord&#39;s OAuth2 implicit grant</a></p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>siltstride-auth-redirect</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./auth-redirect.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./auth-redirect.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#transformFragmentToTokenWrapper">transformFragmentToTokenWrapper</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#onMouseMove">onMouseMove</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/layout/auth-redirect/auth-redirect.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieve the URL fragment and login</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transformFragmentToTokenWrapper"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            transformFragmentToTokenWrapper
+                        </b>
+                        <a href="#transformFragmentToTokenWrapper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>transformFragmentToTokenWrapper(fragment: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/layout/auth-redirect/auth-redirect.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Helper transforming the provided URL fragment string into the equivalent <a href="../classes/TokenWrapper.html">TokenWrapper</a> object</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fragment</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>URL fragment to transform</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/TokenWrapper.html" target="_self" >TokenWrapper</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Transformed object containing the access token response attributes</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onMouseMove"></a>
+                        <span class="name"><b>onMouseMove</b><a href="#onMouseMove"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>onMouseMove()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/layout/auth-redirect/auth-redirect.component.ts:33</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Helper accessor returning the <a href="../miscellaneous/variables.html#mouseParallaxHelper">mouseParallaxHelper</a> function for use in the HTML template</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { mouseParallaxHelper } from &quot;@core/helper/mouse-parallax.helper&quot;;
+import { ActivatedRoute, Router } from &quot;@angular/router&quot;;
+import { AuthService } from &quot;@core/http/auth.service&quot;;
+import { TokenWrapper } from &quot;@core/model/token.model&quot;;
+import { plainToClass } from &quot;class-transformer&quot;;
+
+/**
+ * Component handling the redirect from [Discord&#x27;s OAuth2 implicit grant]{@link https://discord.com/developers/docs/topics/oauth2#implicit-grant}
+ */
+@Component({
+  selector: &quot;siltstride-auth-redirect&quot;,
+  templateUrl: &quot;./auth-redirect.component.html&quot;,
+  styleUrls: [&quot;./auth-redirect.component.scss&quot;]
+})
+export class AuthRedirectComponent implements OnInit {
+  /**
+   * @ignore
+   * @param {ActivatedRoute} route
+   * @param {Router} router
+   * @param {AuthService} authService
+   */
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private authService: AuthService
+  ) {}
+
+  /**
+   * Helper accessor returning the {@link mouseParallaxHelper} function for use in the HTML template
+   * @returns {(element: HTMLElement, event: MouseEvent) &#x3D;&gt; void} Mouse parallax helper function
+   */
+  public get onMouseMove(): (element: HTMLElement, event: MouseEvent) &#x3D;&gt; void {
+    return mouseParallaxHelper;
+  }
+
+  /**
+   * Retrieve the URL fragment and login
+   */
+  public ngOnInit(): void {
+    const tokenWrapper: TokenWrapper &#x3D; this.transformFragmentToTokenWrapper(
+      this.route.snapshot.fragment
+    );
+    this.authService.login(tokenWrapper).subscribe(() &#x3D;&gt; {
+      void this.router.navigate([&quot;app&quot;, &quot;dashboard&quot;]);
+    });
+  }
+
+  /**
+   * Helper transforming the provided URL fragment string into the equivalent {@link TokenWrapper} object
+   * @param {string} fragment URL fragment to transform
+   * @returns {TokenWrapper} Transformed object containing the access token response attributes
+   * @private
+   */
+  private transformFragmentToTokenWrapper(fragment: string): TokenWrapper {
+    const properties &#x3D; fragment?.split(&quot;&amp;&quot;);
+    const obj: {
+      access_token: string;
+      token_type: string;
+      expires_in: string;
+      scope: string;
+    } &#x3D; {
+      access_token: &quot;&quot;,
+      token_type: &quot;&quot;,
+      expires_in: &quot;&quot;,
+      scope: &quot;&quot;
+    };
+    properties?.forEach((value: string, index: number) &#x3D;&gt; {
+      const property &#x3D; properties[index]?.split(&quot;&#x3D;&quot;);
+      obj[property[0]] &#x3D; property[1];
+    });
+    return plainToClass(TokenWrapper, obj);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div
+  #foregroundSpinner
+  (mousemove)&#x3D;&quot;onMouseMove(foregroundSpinner, $event)&quot;
+  class&#x3D;&quot;foreground-spinner&quot;
+&gt;
+  &lt;clr-spinner&gt;&lt;/clr-spinner&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./auth-redirect.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.foreground-spinner::before {
+  content: &quot;&quot;;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  // url must be called in scss template file.
+  // Inline scss template would not resolve image url.
+  background-image: url(&quot;../../../assets/Fargoth.jpg&quot;);
+  background-repeat: no-repeat;
+  background-position: var(--mouseX) var(--mouseY);
+  background-size: auto 150%;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.foreground-spinner {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  z-index: 0;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div  #foregroundSpinner  (mousemove)="onMouseMove(foregroundSpinner, $event)"  class="foreground-spinner">  <clr-spinner></clr-spinner></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'siltstride-root'},{'name': 'AuthRedirectComponent', 'selector': 'siltstride-auth-redirect'},{'name': 'DashboardComponent', 'selector': 'siltstride-dashboard'},{'name': 'FooterComponent', 'selector': 'siltstride-footer'},{'name': 'HeaderComponent', 'selector': 'siltstride-header'},{'name': 'LayoutComponent', 'selector': 'siltstride-layout'},{'name': 'LoginComponent', 'selector': 'siltstride-login'},{'name': 'ServerComponent', 'selector': 'siltstride-server'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AuthRedirectComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthRedirectComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
