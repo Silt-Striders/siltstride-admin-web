@@ -19,15 +19,15 @@ import { AuthRedirectComponent } from "./layout/auth-redirect/auth-redirect.comp
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    AuthRedirectComponent,
+    AuthRedirectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    SharedModule,
+    SharedModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

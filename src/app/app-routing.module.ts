@@ -15,15 +15,15 @@ const routes: Routes = [
       {
         path: "",
         loadChildren: () =>
-          import("@module/home/home.module").then((m) => m.HomeModule),
-      },
-    ],
+          import("@module/home/home.module").then((m) => m.HomeModule)
+      }
+    ]
   },
-  { path: "**", redirectTo: "/app/dashboard" },
+  { path: "**", redirectTo: "/app/dashboard" }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

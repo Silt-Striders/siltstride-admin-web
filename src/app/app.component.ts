@@ -1,10 +1,17 @@
 import { Component } from "@angular/core";
 
+/**
+ * Main Component for the application
+ */
 @Component({
   selector: "siltstride-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"],
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = "siltstride-admin-web";
+  /**
+   * @ignore
+   * @type {string}
+   */
+  public title = "siltstride-admin-web";
 }

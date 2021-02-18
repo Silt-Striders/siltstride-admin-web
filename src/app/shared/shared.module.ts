@@ -7,6 +7,6 @@ import { SafeResourceUrlPipe } from "./pipe/safe-resource-url.pipe";
 @NgModule({
   declarations: [SafeResourceUrlPipe],
   imports: [CommonModule, FormsModule, UserInterfaceModule],
-  exports: [FormsModule, UserInterfaceModule, SafeResourceUrlPipe],
+  exports: [FormsModule, UserInterfaceModule, SafeResourceUrlPipe]
 })
 export class SharedModule {}

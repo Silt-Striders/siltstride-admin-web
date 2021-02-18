@@ -7,8 +7,8 @@ describe("AuthRedirectComponent", () => {
   let fixture: ComponentFixture<AuthRedirectComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AuthRedirectComponent],
+    void TestBed.configureTestingModule({
+      declarations: [AuthRedirectComponent]
     }).compileComponents();
   }));
 

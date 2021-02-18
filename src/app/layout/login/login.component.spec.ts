@@ -7,8 +7,8 @@ describe("LoginComponent", () => {
   let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [LoginComponent],
+    void TestBed.configureTestingModule({
+      declarations: [LoginComponent]
     }).compileComponents();
   }));
 

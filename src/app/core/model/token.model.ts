@@ -1,57 +1,79 @@
 import { Transform, TransformFnParams, Type } from "class-transformer";
 
+/**
+ * Model wrapping Discord's [Access Token response]{@link https://discord.com/developers/docs/topics/oauth2#authorization-code-grant-access-token-response} attributes
+ */
 export class TokenWrapper {
+  /**
+   * @ignore
+   * @type {string}
+   * @private
+   */
   // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private access_token: string;
 
   /**
-   * @description The access token
+   * The access token
    * @returns {string}
    */
   public get accessToken(): string {
     return this.access_token;
   }
 
+  /**
+   * @ignore
+   * @type {string}
+   * @private
+   */
   // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private token_type: string;
 
   /**
-   * @description The token type
-   * @example "Bearer"
+   * The token type
    * @returns {string}
    */
   public get tokenType(): string {
     return this.token_type;
   }
 
+  /**
+   * @ignore
+   * @type {Date}
+   * @private
+   */
   @Type(() => Number)
   @Transform((params: TransformFnParams) => {
     const expiration = new Date();
-    expiration.setSeconds(expiration.getSeconds() + params.value);
+    expiration.setSeconds(expiration.getSeconds() + <number>params.value);
     return expiration;
   })
   // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private expires_in: Date;
 
   /**
-   * @description The expiration date for the token
+   * The expiration date for the token
    * @returns {Date}
    */
   public get expiresIn(): Date {
     return this.expires_in;
   }
 
+  /**
+   * @ignore
+   * @type {Array<string>}
+   * @private
+   */
   // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle, id-blacklist, id-match
   private _scope: Array<string>;
   /**
-   * @description The scopes associated to the token
+   * The scopes associated to the token
    * @returns {Array<string>}
    */
   public get scope(): Array<string> {
     return this._scope;
   }
   @Type(() => String)
-  @Transform((params: TransformFnParams) => params.value.split("+"))
+  @Transform((params: TransformFnParams) => (<string>params.value).split("+"))
   public set scope(value: Array<string>) {
     this._scope = value;
   }

@@ -8,6 +8,6 @@ import { ServerComponent } from "./page/server/server.component";
 
 @NgModule({
   declarations: [DashboardComponent, ServerComponent],
-  imports: [CommonModule, HomeRoutingModule, SharedModule],
+  imports: [CommonModule, HomeRoutingModule, SharedModule]
 })
 export class HomeModule {}

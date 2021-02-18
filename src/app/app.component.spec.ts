@@ -4,9 +4,9 @@ import { AppComponent } from "./app.component";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
+    void TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent],
+      declarations: [AppComponent]
     }).compileComponents();
   }));
 
@@ -25,7 +25,7 @@ describe("AppComponent", () => {
   it("should render title", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
+    const compiled = <HTMLParagraphElement>fixture.nativeElement;
     expect(compiled.querySelector(".content span").textContent).toContain(
       "siltstride-admin-web app is running!"
     );

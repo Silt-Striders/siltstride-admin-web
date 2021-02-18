@@ -5,7 +5,7 @@ import { UserInterfaceModule } from "@shared/user-interface/user-interface.modul
 
 @NgModule({
   imports: [HttpClientModule, UserInterfaceModule],
-  exports: [HttpClientModule],
+  exports: [HttpClientModule]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

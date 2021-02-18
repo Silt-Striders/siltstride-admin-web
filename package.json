@@ -1,10 +1,17 @@
 {
   "name": "siltstride-admin-web",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Silt-Striders/siltstride-admin-web"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "node server.js",
     "build": "ng build",
+    "build:docs": "compodoc",
+    "serve:docs": "compodoc -w -s",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -42,6 +49,7 @@
     "@clr/core": "^3.1.15",
     "@clr/icons": "^3.0.0",
     "@clr/ui": "^3.0.0",
+    "@compodoc/compodoc": "^1.1.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -53,6 +61,7 @@
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
     "eslint-plugin-prettier": "^3.3.1",
+    "express": "^4.17.1",
     "husky": "^5.0.9",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
