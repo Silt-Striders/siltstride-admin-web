@@ -8,10 +8,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:dev": "node server.js",
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "build:docs": "compodoc",
-    "serve:docs": "compodoc -w -s",
+    "serve:docs": "compodoc -s",
+    "dev:docs": "compodoc -w -s",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
