@@ -1,3 +1,4 @@
+name: Siltstride Admin docs
 tsconfig: ./tsconfig.json
 output: ./docs
 theme: readthedocs

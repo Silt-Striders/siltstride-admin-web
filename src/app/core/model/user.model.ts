@@ -230,10 +230,19 @@ export class User {
   }
 
   /**
-   * Helper accessor to retrieve the unique avatar URL for [this]{@link User}
+   * Helper accessor returning the unique avatar URL for [this]{@link User}
    * @returns {string} The unique avatar URL
    */
   public get avatarUrl(): string {
     return `${environment.discordCdnRootUrl}avatars/${this.id}/${this.avatar}.png`;
+  }
+
+  /**
+   * Helper accessor returning the {@link User}'s username as displayed in Discord
+   * with the {@link User#username} and {@link User#discriminator}
+   * @returns {string} The display name
+   */
+  public get displayName(): string {
+    return `${this.username}#${this.discriminator}`;
   }
 }

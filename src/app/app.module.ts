@@ -10,7 +10,8 @@ import { LoginComponent } from "./layout/login/login.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CoreModule } from "@core/core.module";
 import { SharedModule } from "@shared/shared.module";
-import { AuthRedirectComponent } from "./layout/auth-redirect/auth-redirect.component";
+import { AuthRedirectComponent } from "./layout/auth-redirect/presentation/auth-redirect.component";
+import { AuthRedirectContainer } from "./layout/auth-redirect/container/auth-redirect.container";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AuthRedirectComponent } from "./layout/auth-redirect/auth-redirect.comp
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    AuthRedirectComponent
+    AuthRedirectComponent,
+    AuthRedirectContainer
   ],
   imports: [
     BrowserModule,

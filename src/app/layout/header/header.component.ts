@@ -1,67 +1,51 @@
-import { Component, OnInit } from "@angular/core";
-import { AuthService } from "@core/http/auth.service";
-import { Observable } from "rxjs";
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 import { User } from "@core/model/user.model";
-import { map } from "rxjs/operators";
 
 /**
- * Header Component used in the application layout
+ * Header Presentational Component used in the application layout
  */
 @Component({
   selector: "siltstride-header",
   templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+  styleUrls: ["./header.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   /**
-   * Helper accessor retrieving the logged in {@link User}
-   * @returns {Observable<User>} Observable containing the logged in user
+   * @ignore
+   * @type {User}
+   * @private
    */
-  public get user(): Observable<User> {
-    return this.authService.user;
+  private _user: User;
+
+  /**
+   * Accessor retrieving the {@link User} object used for this component
+   * @returns {User} The user in this component
+   */
+  public get user(): User {
+    return this._user;
+  }
+
+  @Input()
+  public set user(value: User) {
+    if (value == null) {
+      throw new Error("Must provide a valid User object!");
+    }
+    this._user = value;
   }
 
   /**
-   * Helper accessor retrieving the [id]{@link User#id} of the logged in {@link User}
-   * @returns {Observable<string>} Observable containing the logged in user's id
+   * Helper accessor retrieving the CSS url() function call with the
+   * {@link User}'s avatar URL inserted as a parameter
+   * @returns {string} The CSS url() function call
    */
-  public get id(): Observable<string> {
-    return this.authService.user.pipe(map((user: User) => user.id));
-  }
-
-  /**
-   * Helper accessor retrieving the [username]{@link User#username} of the logged in {@link User}
-   * @returns {Observable<string>} Observable containing the logged in user's username
-   */
-  public get username(): Observable<string> {
-    return this.authService.user.pipe(map((user: User) => user.username));
-  }
-
-  /**
-   * Helper accessor retrieving the [discriminator]{@link User#discriminator} of the logged in {@link User}
-   * @returns {Observable<string>} Observable containing the logged in user's discriminator
-   */
-  public get discriminator(): Observable<string> {
-    return this.authService.user.pipe(map((user: User) => user.discriminator));
-  }
-
-  /**
-   * Helper accessor retrieving the [avatar URL]{@link User#avatarUrl} of the logged in {@link User}
-   * @returns {Observable<string>} Observable containing the logged in user's avatar URL
-   */
-  public get avatarUrl(): Observable<string> {
-    return this.authService.user.pipe(map((user: User) => user.avatarUrl));
+  public get backgroundImageUrl(): string {
+    return `url(${this.user.avatarUrl})`;
   }
 
   /**
    * @ignore
-   * @param {AuthService} authService
    */
-  constructor(private authService: AuthService) {}
-
-  /**
-   * @ignore
-   */
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method,@typescript-eslint/no-empty-function
-  public ngOnInit(): void {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  constructor() {}
 }

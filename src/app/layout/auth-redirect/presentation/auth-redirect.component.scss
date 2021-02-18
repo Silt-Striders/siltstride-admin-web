@@ -7,7 +7,7 @@
   display: block;
   // url must be called in scss template file.
   // Inline scss template would not resolve image url.
-  background-image: url("../../../assets/Fargoth.jpg");
+  background-image: url("../../../../assets/Fargoth.jpg");
   background-repeat: no-repeat;
   background-position: var(--mouseX) var(--mouseY);
   background-size: auto 150%;

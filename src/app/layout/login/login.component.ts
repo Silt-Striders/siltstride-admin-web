@@ -3,7 +3,9 @@ import { environment } from "@env";
 import { mouseParallaxHelper } from "@core/helper/mouse-parallax.helper";
 
 /**
- * Component used as the landing page for unauthenticated users of the application and where they will initiate the OAuth2 login handshake with Discord
+ * Presentational Component used as the landing page for unauthenticated users
+ * of the application and where they will initiate the OAuth2 login handshake
+ * with Discord
  */
 @Component({
   selector: "siltstride-login",
@@ -12,7 +14,8 @@ import { mouseParallaxHelper } from "@core/helper/mouse-parallax.helper";
 })
 export class LoginComponent implements OnInit {
   /**
-   * Helper accessor retrieving the Discord OAuth2 implicit grant URL configured for our application
+   * Helper accessor retrieving the Discord OAuth2 implicit grant URL configured
+   * for our application
    * @returns {string} Discord OAuth2 implicit grant URL
    */
   public get discordOAuthImplicitFlowUrl(): string {
@@ -20,8 +23,10 @@ export class LoginComponent implements OnInit {
   }
 
   /**
-   * Helper accessor returning the {@link mouseParallaxHelper} function for use in the HTML template
-   * @returns {(element: HTMLElement, event: MouseEvent) => void} Mouse parallax helper function
+   * Helper accessor returning the {@link mouseParallaxHelper} function for use
+   * in the HTML template
+   * @returns {(element: HTMLElement, event: MouseEvent) => void} Mouse parallax
+   * helper function
    */
   public get onMouseMove(): (element: HTMLElement, event: MouseEvent) => void {
     return mouseParallaxHelper;

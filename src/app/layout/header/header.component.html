@@ -23,11 +23,11 @@
     <a href="javascript://" class="nav-link nav-icon-text">
       <span
         class="clr-icon user-avatar"
-        [style.background-image]="'url(' + (avatarUrl | async) + ')'"
+        [style.background-image]="backgroundImageUrl"
         alt="avatar"
       ></span>
       <span class="nav-text"
-        >{{ username | async }}#{{ discriminator | async }}</span
+        >{{ user.displayName }}</span
       >
     </a>
   </div>
