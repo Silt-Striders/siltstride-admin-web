@@ -2,12 +2,8 @@ import { Injectable } from "@angular/core";
 import { CoreModule } from "@core/core.module";
 import { BehaviorSubject, Observable } from "rxjs";
 import { TokenWrapper } from "@core/model/token.model";
-import { Router } from "@angular/router";
-import { plainToClass } from "class-transformer";
 import { map } from "rxjs/operators";
 import { User } from "@core/model/user.model";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { environment } from "@env";
 
 /**
  * Service handling authentication logic
@@ -17,7 +13,7 @@ import { environment } from "@env";
 })
 export class AuthService {
   /**
-   * The [token]{@link TokenWrapper} for the logged in {@link User}
+   * The [token]{@link TokenWrapper} for the current {@link User}
    * @type {BehaviorSubject<TokenWrapper>} BehaviorSubject containing the token
    * @private
    */
@@ -26,7 +22,7 @@ export class AuthService {
   );
 
   /**
-   * Get the [token]{@link TokenWrapper} associated with the logged in {@link User}
+   * Get the [token]{@link TokenWrapper} associated with the current {@link User}
    * @returns {Observable<TokenWrapper>} Observable containing the token
    */
   public get token(): Observable<TokenWrapper> {
@@ -34,66 +30,25 @@ export class AuthService {
   }
 
   /**
-   * The logged in {@link User}
-   * @type {BehaviorSubject<User>} BehaviorSubject containing the logged in user
-   * @private
-   */
-  private userSubject: BehaviorSubject<User> = new BehaviorSubject<User>(
-    new User()
-  );
-
-  /**
-   * Get the logged in {@link User}
-   * @returns {Observable<User>} Observable containing the logged in user
-   */
-  public get user(): Observable<User> {
-    return this.userSubject.asObservable();
-  }
-
-  /**
    * @ignore
-   * @param {Router} router
-   * @param {HttpClient} http
    */
-  constructor(private router: Router, private http: HttpClient) {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  constructor() {}
 
   /**
-   * Retrieves the current {@link User}'s info from Discord
+   * Stores the {@link TokenWrapper} received from Discord OAuth2 implicit grant
    * @param {TokenWrapper} tokenWrapper Object containing the access token
-   * @returns {Observable<void>} Used for validation of successful retrieval of the current user
+   * @returns {Observable<TokenWrapper>} Used for validation of successful token storage
    */
-  public login(tokenWrapper: TokenWrapper): Observable<void> {
+  public storeToken(tokenWrapper: TokenWrapper): void {
     this.tokenSubject.next(tokenWrapper);
-    return this.getUserInfo(tokenWrapper).pipe(
-      map((user: User) => this.userSubject.next(user))
-    );
   }
 
   /**
-   * Helper for requesting the logged in {@link User}'s information from Discord
-   * @param {TokenWrapper} tokenWrapper Object containing the access token to authenticate the request to Discord
-   * @returns {Observable<User>} Observable containing the logged in user
-   * @private
+   * Helper method determining the validity of the stored {@link TokenWrapper}
+   * @returns {Observable<boolean>} Observable containing the token's validity status
    */
-  private getUserInfo(tokenWrapper: TokenWrapper): Observable<User> {
-    const headers: HttpHeaders = new HttpHeaders({
-      Authorization: `${tokenWrapper?.tokenType} ${tokenWrapper?.accessToken}`
-    });
-    return this.http
-      .get<User>(`${environment.discordApiRootUrl}/users/@me`, {
-        headers
-      })
-      .pipe(map((user: User) => plainToClass(User, user)));
-    // .pipe(catchError((error) => this.router.navigate(["/login"])));
-  }
-
-  /**
-   * Helper method to validate the current {@link User} is logged in
-   * @returns {Observable<boolean>} Observable containing the current user's authentication status
-   */
-  public isLoggedIn(): Observable<boolean> {
-    return this.user.pipe(
-      map((user: User) => user.id != null && user.username != null)
-    );
+  public isValidToken(): Observable<boolean> {
+    return this.token.pipe(map((token: TokenWrapper) => token.isValid()));
   }
 }

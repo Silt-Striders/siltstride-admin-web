@@ -5,7 +5,6 @@ import { AuthGuard } from "@core/guard/auth.guard";
 import { ServerComponent } from "@module/home/page/server/server.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "/dashboard" },
   {
     path: "dashboard",
     component: DashboardComponent,

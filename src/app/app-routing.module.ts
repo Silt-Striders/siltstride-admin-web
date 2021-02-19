@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./layout/login/login.component";
 import { LayoutComponent } from "./layout/layout/layout.component";
 import { AuthRedirectComponent } from "./layout/auth-redirect/presentation/auth-redirect.component";
+import { AuthRedirectResolver } from "@core/resolver/auth-redirect.resolver";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/app/dashboard" },
@@ -11,6 +12,9 @@ const routes: Routes = [
   {
     path: "app",
     component: LayoutComponent,
+    resolve: {
+      user: AuthRedirectResolver
+    },
     children: [
       {
         path: "",

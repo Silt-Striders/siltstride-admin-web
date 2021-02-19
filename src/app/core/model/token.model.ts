@@ -1,4 +1,9 @@
-import { Transform, TransformFnParams, Type } from "class-transformer";
+import {
+  plainToClass,
+  Transform,
+  TransformFnParams,
+  Type
+} from "class-transformer";
 
 /**
  * Model wrapping Discord's [Access Token response]{@link https://discord.com/developers/docs/topics/oauth2#authorization-code-grant-access-token-response} attributes
@@ -76,5 +81,47 @@ export class TokenWrapper {
   @Transform((params: TransformFnParams) => (<string>params.value).split("+"))
   public set scope(value: Array<string>) {
     this._scope = value;
+  }
+
+  /**
+   * Helper transforming the provided URL fragment string into the equivalent
+   * {@link TokenWrapper} object
+   * @param {string} fragment URL fragment to transform
+   * @returns {TokenWrapper} Transformed object containing the access token
+   * response attributes
+   */
+  public static getTokenWrapperFromUrlFragment(fragment: string): TokenWrapper {
+    const properties = fragment?.split("&");
+    const obj: {
+      access_token: string;
+      token_type: string;
+      expires_in: string;
+      scope: string;
+    } = {
+      access_token: "",
+      token_type: "",
+      expires_in: "",
+      scope: ""
+    };
+    properties?.forEach((value: string, index: number) => {
+      const property = properties[index]?.split("=");
+      obj[property[0]] = property[1];
+    });
+    return plainToClass(TokenWrapper, obj);
+  }
+
+  /**
+   * Helper method determining the validity of the {@link TokenWrapper#accessToken}
+   * @returns {boolean} Token's validity status
+   */
+  public isValid(): boolean {
+    const now = new Date();
+    return (
+      this.accessToken != null &&
+      this.tokenType != null &&
+      this.expiresIn != null &&
+      this.scope != null &&
+      now < this.expiresIn
+    );
   }
 }

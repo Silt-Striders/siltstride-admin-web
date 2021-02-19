@@ -1,9 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { mouseParallaxHelper } from "@core/helper/mouse-parallax.helper";
 import { ActivatedRoute, Router } from "@angular/router";
-import { AuthService } from "@core/http/auth.service";
 import { TokenWrapper } from "@core/model/token.model";
-import { plainToClass } from "class-transformer";
+import { AuthService } from "@core/http/auth.service";
 
 /**
  * Component handling the redirect from
@@ -18,9 +17,20 @@ export class AuthRedirectComponent implements OnInit {
   /**
    * @ignore
    */
-  constructor(private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
+  /**
+   * Retrieve the [token]{@link TokenWrapper} from the URL fragment and store it
+   */
   public ngOnInit() {
+    const tokenWrapper = TokenWrapper.getTokenWrapperFromUrlFragment(
+      this.route.snapshot.fragment
+    );
+    this.authService.storeToken(tokenWrapper);
     void this.router.navigate(["app", "dashboard"]);
   }
 

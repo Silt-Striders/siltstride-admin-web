@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 import { User } from "@core/model/user.model";
 
 /**
- * Header Presentational Component used in the application layout
+ * Header Presentation Component used in the application layout
  */
 @Component({
   selector: "siltstride-header",
@@ -26,6 +26,10 @@ export class HeaderComponent {
     return this._user;
   }
 
+  /**
+   * Mutator setting the [user]{@link User} instance member for this component
+   * @param {User} value The incoming user value
+   */
   @Input()
   public set user(value: User) {
     if (value == null) {

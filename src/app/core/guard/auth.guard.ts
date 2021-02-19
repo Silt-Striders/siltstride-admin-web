@@ -7,12 +7,11 @@ import {
   Router
 } from "@angular/router";
 import { Observable } from "rxjs";
-import { CoreModule } from "@core/core.module";
 import { AuthService } from "@core/http/auth.service";
 import { tap } from "rxjs/operators";
 
 @Injectable({
-  providedIn: CoreModule
+  providedIn: "root"
 })
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
@@ -21,18 +20,14 @@ export class AuthGuard implements CanActivate {
    * Determines whether a route can be activated based on user authentication status
    * @param {ActivatedRouteSnapshot} next The route attempting to be navigated to
    * @param {RouterStateSnapshot} state Current Router state
-   * @returns {Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree}
+   * @returns {Observable<boolean>} Observable containing the token validity status
    */
   public canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    return this.authService.isLoggedIn().pipe(
-      tap((value) => {
+  ): Observable<boolean> {
+    return this.authService.isValidToken().pipe(
+      tap((value: boolean) => {
         if (!value) {
           void this.router.navigate(["login"]);
         }
