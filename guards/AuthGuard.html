@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>siltstride-admin-web documentation</title>
+        <title>Siltstride Admin docs</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">siltstride-admin-web documentation</a>
+            <a href="../" class="navbar-brand">Siltstride Admin docs</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -106,7 +106,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/core/guard/auth.guard.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/core/guard/auth.guard.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -185,8 +185,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/core/guard/auth.guard.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/core/guard/auth.guard.ts:25</a></div>
                 </td>
             </tr>
 
@@ -246,11 +246,12 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable | Promise | boolean | UrlTree</code>
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Observable containing the token validity status</p>
+
                     </div>
                 </td>
             </tr>
@@ -270,12 +271,11 @@ import {
   Router
 } from &quot;@angular/router&quot;;
 import { Observable } from &quot;rxjs&quot;;
-import { CoreModule } from &quot;@core/core.module&quot;;
 import { AuthService } from &quot;@core/http/auth.service&quot;;
 import { tap } from &quot;rxjs/operators&quot;;
 
 @Injectable({
-  providedIn: CoreModule
+  providedIn: &quot;root&quot;
 })
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
@@ -284,18 +284,14 @@ export class AuthGuard implements CanActivate {
    * Determines whether a route can be activated based on user authentication status
    * @param {ActivatedRouteSnapshot} next The route attempting to be navigated to
    * @param {RouterStateSnapshot} state Current Router state
-   * @returns {Observable&lt;boolean | UrlTree&gt; | Promise&lt;boolean | UrlTree&gt; | boolean | UrlTree}
+   * @returns {Observable&lt;boolean&gt;} Observable containing the token validity status
    */
   public canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable&lt;boolean | UrlTree&gt;
-    | Promise&lt;boolean | UrlTree&gt;
-    | boolean
-    | UrlTree {
-    return this.authService.isLoggedIn().pipe(
-      tap((value) &#x3D;&gt; {
+  ): Observable&lt;boolean&gt; {
+    return this.authService.isValidToken().pipe(
+      tap((value: boolean) &#x3D;&gt; {
         if (!value) {
           void this.router.navigate([&quot;login&quot;]);
         }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>siltstride-admin-web documentation</title>
+        <title>Siltstride Admin docs</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">siltstride-admin-web documentation</a>
+            <a href="../" class="navbar-brand">Siltstride Admin docs</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -134,6 +134,9 @@
                                 </li>
                                 <li>
                                     <a href="#avatarUrl">avatarUrl</a>
+                                </li>
+                                <li>
+                                    <a href="#displayName">displayName</a>
                                 </li>
                             </ul>
                         </td>
@@ -1100,7 +1103,43 @@
                             </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Helper accessor to retrieve the unique avatar URL for <a href="../classes/User.html">this</a></p>
+                                <div class="io-description"><p>Helper accessor returning the unique avatar URL for <a href="../classes/User.html">this</a></p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayName"></a>
+                        <span class="name"><b>displayName</b><a href="#displayName"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>displayName()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="245" class="link-to-prism">src/app/core/model/user.model.ts:245</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Helper accessor returning the <a href="../classes/User.html">User</a>&#39;s username as displayed in Discord
+with the <a href="../classes/User.html#username">User</a> and <a href="../classes/User.html#discriminator">User</a></p>
 </div>
 
                                 <div>
@@ -1351,11 +1390,20 @@ export class User {
   }
 
   /**
-   * Helper accessor to retrieve the unique avatar URL for [this]{@link User}
+   * Helper accessor returning the unique avatar URL for [this]{@link User}
    * @returns {string} The unique avatar URL
    */
   public get avatarUrl(): string {
     return &#x60;${environment.discordCdnRootUrl}avatars/${this.id}/${this.avatar}.png&#x60;;
+  }
+
+  /**
+   * Helper accessor returning the {@link User}&#x27;s username as displayed in Discord
+   * with the {@link User#username} and {@link User#discriminator}
+   * @returns {string} The display name
+   */
+  public get displayName(): string {
+    return &#x60;${this.username}#${this.discriminator}&#x60;;
   }
 }
 </code></pre>

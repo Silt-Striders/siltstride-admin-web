@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>siltstride-admin-web documentation</title>
+        <title>Siltstride Admin docs</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">siltstride-admin-web documentation</a>
+            <a href="../" class="navbar-brand">Siltstride Admin docs</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -75,7 +75,8 @@
 import { RouterModule, Routes } from &quot;@angular/router&quot;;
 import { LoginComponent } from &quot;./layout/login/login.component&quot;;
 import { LayoutComponent } from &quot;./layout/layout/layout.component&quot;;
-import { AuthRedirectComponent } from &quot;./layout/auth-redirect/auth-redirect.component&quot;;
+import { AuthRedirectComponent } from &quot;./layout/auth-redirect/presentation/auth-redirect.component&quot;;
+import { AuthRedirectResolver } from &quot;@core/resolver/auth-redirect.resolver&quot;;
 
 const routes: Routes &#x3D; [
   { path: &quot;&quot;, pathMatch: &quot;full&quot;, redirectTo: &quot;/app/dashboard&quot; },
@@ -84,6 +85,9 @@ const routes: Routes &#x3D; [
   {
     path: &quot;app&quot;,
     component: LayoutComponent,
+    resolve: {
+      user: AuthRedirectResolver
+    },
     children: [
       {
         path: &quot;&quot;,

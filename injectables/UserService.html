@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content pipe">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -37,12 +37,9 @@
 
 
 
-
-
-
 <ol class="breadcrumb">
-  <li>Pipes</li>
-  <li>SafeResourceUrlPipe</li>
+  <li>Injectables</li>
+  <li>UserService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,34 +53,45 @@
 
 <div class="tab-content">
     <div class="tab-pane fade active in" id="c-info">
-
         <p class="comment">
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/shared/pipe/safe-resource-url.pipe.ts</code>
+            <code>src/app/core/http/user.service.ts</code>
         </p>
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Utility Pipe to trust provided resource URLs</p>
-
-            </p>
 
 
-        <section>
-            <h3>Metadata</h3>
-            <table class="table table-sm table-hover">
-                <tbody>
-                    <tr>
-                        <td class="col-md-3">Name</td>
-                        <td class="col-md-9">safeResourceUrl</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getCurrentUser">getCurrentUser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
 
             <section>
     
@@ -94,76 +102,45 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="transform"></a>
+                    <a name="getCurrentUser"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            transform
+                            getCurrentUser
                         </b>
-                        <a href="#transform"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getCurrentUser"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>transform(resourceUrl: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>getCurrentUser()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/shared/pipe/safe-resource-url.pipe.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/core/http/user.service.ts:24</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Bypasses the <a href="DomSanitizer">DomSanitizer</a>&#39;s security trust for the provided resource URL</p>
+                    <div class="io-description"><p>Retrieve the current <a href="../classes/User.html">User</a>&#39;s information from Discord</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>resourceUrl</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Resource URL to trust</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://angular.io/api/platform-browser/SafeResourceUrl" target="_blank" >SafeResourceUrl</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
 
                     </div>
                     <div class="io-description">
-                        <p>The safe resource URL</p>
+                        <p>Observable containing the current user</p>
 
                     </div>
                 </td>
@@ -176,31 +153,47 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
-import { DomSanitizer, SafeResourceUrl } from &quot;@angular/platform-browser&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { EMPTY, Observable } from &quot;rxjs&quot;;
+import { User } from &quot;@core/model/user.model&quot;;
+import { HttpClient } from &quot;@angular/common/http&quot;;
+import { environment } from &quot;@env&quot;;
+import { catchError, map, take } from &quot;rxjs/operators&quot;;
+import { plainToClass } from &quot;class-transformer&quot;;
 
-/**
- * Utility Pipe to trust provided resource URLs
- */
-@Pipe({
-  name: &quot;safeResourceUrl&quot;
+@Injectable({
+  providedIn: &quot;root&quot;
 })
-export class SafeResourceUrlPipe implements PipeTransform {
-  constructor(private sanitizer: DomSanitizer) {}
+export class UserService {
+  /**
+   * @ignore
+   * @param {HttpClient} http
+   */
+  constructor(private http: HttpClient) {}
 
   /**
-   * Bypasses the {@link DomSanitizer}&#x27;s security trust for the provided resource URL
-   * @param {string} resourceUrl Resource URL to trust
-   * @returns {SafeResourceUrl} The safe resource URL
+   * Retrieve the current {@link User}&#x27;s information from Discord
+   * @returns {Observable&lt;User&gt;} Observable containing the current user
+   * @private
    */
-  public transform(resourceUrl: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(resourceUrl);
+  public getCurrentUser(): Observable&lt;User&gt; {
+    return this.http
+      .get&lt;User&gt;(&#x60;${environment.discordApiRootUrl}/users/@me&#x60;)
+      .pipe(
+        take(1),
+        map((user: User) &#x3D;&gt; plainToClass(User, user)),
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        catchError((error) &#x3D;&gt; EMPTY)
+      );
   }
 }
 </code></pre>
     </div>
 
 </div>
+
+
+
 
 
 
@@ -226,8 +219,8 @@ export class SafeResourceUrlPipe implements PipeTransform {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'pipe';
-            var COMPODOC_CURRENT_PAGE_URL = 'SafeResourceUrlPipe.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content pipe">
+               <div class="content guard">
                    <div class="content-data">
 
 
@@ -39,10 +39,9 @@
 
 
 
-
 <ol class="breadcrumb">
-  <li>Pipes</li>
-  <li>SafeResourceUrlPipe</li>
+    <li>Guards</li>
+    <li>AuthRedirectResolver</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -55,37 +54,49 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-
-        <p class="comment">
+        <div class="tab-pane fade active in" id="c-info">
+            <p class="comment">
             <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/app/shared/pipe/safe-resource-url.pipe.ts</code>
-        </p>
-
-            <p class="comment">
-                <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Utility Pipe to trust provided resource URLs</p>
-
+                <code>src/app/core/resolver/auth-redirect.resolver.ts</code>
             </p>
 
 
-        <section>
-            <h3>Metadata</h3>
-            <table class="table table-sm table-hover">
-                <tbody>
-                    <tr>
-                        <td class="col-md-3">Name</td>
-                        <td class="col-md-9">safeResourceUrl</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
 
-            <section>
+
+
+                <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#resolve">resolve</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+                <section>
     
     <h3 id="methods">
         Methods
@@ -94,36 +105,34 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="transform"></a>
+                    <a name="resolve"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            transform
+                            resolve
                         </b>
-                        <a href="#transform"><span class="icon ion-ios-link"></span></a>
+                        <a href="#resolve"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>transform(resourceUrl: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>resolve(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/shared/pipe/safe-resource-url.pipe.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/core/resolver/auth-redirect.resolver.ts:27</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Bypasses the <a href="DomSanitizer">DomSanitizer</a>&#39;s security trust for the provided resource URL</p>
-</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -133,14 +142,13 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>resourceUrl</td>
+                                    <td>route</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
                                     </td>
 
                                     <td>
@@ -148,10 +156,18 @@
                                     </td>
 
 
+                                </tr>
+                                <tr>
+                                    <td>state</td>
                                     <td>
-                                        <p>Resource URL to trust</p>
-
+                                                <code><a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank" >RouterStateSnapshot</a></code>
                                     </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
                                 </tr>
                             </tbody>
                         </table>
@@ -159,48 +175,58 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://angular.io/api/platform-browser/SafeResourceUrl" target="_blank" >SafeResourceUrl</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
 
                     </div>
                     <div class="io-description">
-                        <p>The safe resource URL</p>
-
+                        
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
+        </div>
 
-    </div>
 
+        <div class="tab-pane fade  tab-source-code" id="c-source">
+            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  ActivatedRouteSnapshot,
+  Resolve,
+  RouterStateSnapshot
+} from &quot;@angular/router&quot;;
+import { Observable } from &quot;rxjs&quot;;
+import { Injectable } from &quot;@angular/core&quot;;
+import { User } from &quot;@core/model/user.model&quot;;
+import { UserService } from &quot;@core/http/user.service&quot;;
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
-import { DomSanitizer, SafeResourceUrl } from &quot;@angular/platform-browser&quot;;
-
-/**
- * Utility Pipe to trust provided resource URLs
- */
-@Pipe({
-  name: &quot;safeResourceUrl&quot;
+@Injectable({
+  providedIn: &quot;root&quot;
 })
-export class SafeResourceUrlPipe implements PipeTransform {
-  constructor(private sanitizer: DomSanitizer) {}
+export class AuthRedirectResolver implements Resolve&lt;User&gt; {
+  /**
+   * @ignore
+   * @param {UserService} userService
+   */
+  constructor(private userService: UserService) {}
 
   /**
-   * Bypasses the {@link DomSanitizer}&#x27;s security trust for the provided resource URL
-   * @param {string} resourceUrl Resource URL to trust
-   * @returns {SafeResourceUrl} The safe resource URL
+   *
+   * @param {ActivatedRouteSnapshot} route
+   * @param {RouterStateSnapshot} state
+   * @returns {Observable&lt;User&gt;}
    */
-  public transform(resourceUrl: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(resourceUrl);
+  public resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable&lt;User&gt; {
+    return this.userService.getCurrentUser();
   }
 }
 </code></pre>
-    </div>
-
+        </div>
 </div>
+
 
 
 
@@ -226,8 +252,8 @@ export class SafeResourceUrlPipe implements PipeTransform {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'pipe';
-            var COMPODOC_CURRENT_PAGE_URL = 'SafeResourceUrlPipe.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthRedirectResolver.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

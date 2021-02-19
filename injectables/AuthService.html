@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>siltstride-admin-web documentation</title>
+        <title>Siltstride Admin docs</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">siltstride-admin-web documentation</a>
+            <a href="../" class="navbar-brand">Siltstride Admin docs</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -86,10 +86,6 @@
                                     <span class="modifier">Private</span>
                                 <a href="#tokenSubject">tokenSubject</a>
                             </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#userSubject">userSubject</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -103,16 +99,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#getUserInfo">getUserInfo</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#isValidToken">isValidToken</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#isLoggedIn">isLoggedIn</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#login">login</a>
+                                <a href="#storeToken">storeToken</a>
                             </li>
                         </ul>
                     </td>
@@ -133,9 +125,6 @@
                                 <li>
                                     <a href="#token">token</a>
                                 </li>
-                                <li>
-                                    <a href="#user">user</a>
-                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -153,115 +142,35 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getUserInfo"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            getUserInfo
-                        </b>
-                        <a href="#getUserInfo"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getUserInfo(tokenWrapper: <a href="../classes/TokenWrapper.html">TokenWrapper</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/app/core/http/auth.service.ts:78</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Helper for requesting the logged in <a href="../classes/User.html">User</a>&#39;s information from Discord</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>tokenWrapper</td>
-                                    <td>
-                                                <code><a href="../classes/TokenWrapper.html" target="_self" >TokenWrapper</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Object containing the access token to authenticate the request to Discord</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Observable containing the logged in user</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="isLoggedIn"></a>
+                    <a name="isValidToken"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            isLoggedIn
+                            isValidToken
                         </b>
-                        <a href="#isLoggedIn"><span class="icon ion-ios-link"></span></a>
+                        <a href="#isValidToken"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isLoggedIn()</code>
+                    <code>isValidToken()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/core/http/auth.service.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/core/http/auth.service.ts:51</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Helper method to validate the current <a href="../classes/User.html">User</a> is logged in</p>
+                    <div class="io-description"><p>Helper method determining the validity of the stored <a href="../classes/TokenWrapper.html">TokenWrapper</a></p>
 </div>
 
                     <div>
@@ -271,7 +180,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>Observable containing the current user&#39;s authentication status</p>
+                        <p>Observable containing the token&#39;s validity status</p>
 
                     </div>
                 </td>
@@ -282,35 +191,35 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="login"></a>
+                    <a name="storeToken"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            login
+                            storeToken
                         </b>
-                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                        <a href="#storeToken"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>login(tokenWrapper: <a href="../classes/TokenWrapper.html">TokenWrapper</a>)</code>
+                    <code>storeToken(tokenWrapper: <a href="../classes/TokenWrapper.html">TokenWrapper</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/core/http/auth.service.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/core/http/auth.service.ts:43</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Retrieves the current <a href="../classes/User.html">User</a>&#39;s info from Discord</p>
+                    <div class="io-description"><p>Stores the <a href="../classes/TokenWrapper.html">TokenWrapper</a> received from Discord OAuth2 implicit grant</p>
 </div>
 
                     <div class="io-description">
@@ -347,11 +256,11 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                     <div class="io-description">
-                        <p>Used for validation of successful retrieval of the current user</p>
+                        <p>Used for validation of successful token storage</p>
 
                     </div>
                 </td>
@@ -392,54 +301,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/core/http/auth.service.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/http/auth.service.ts:20</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>The <a href="../classes/TokenWrapper.html">token</a> for the logged in <a href="../classes/User.html">User</a></p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="userSubject"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            userSubject</b>
-                            <a href="#userSubject"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >BehaviorSubject&lt;User&gt;</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>new BehaviorSubject&lt;User&gt;(
-    new User()
-  )</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/core/http/auth.service.ts:41</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>The logged in <a href="../classes/User.html">User</a></p>
+                        <div class="io-description"><p>The <a href="../classes/TokenWrapper.html">token</a> for the current <a href="../classes/User.html">User</a></p>
 </div>
                     </td>
                 </tr>
@@ -468,53 +336,18 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/core/http/auth.service.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/core/http/auth.service.ts:28</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Get the <a href="../classes/TokenWrapper.html">token</a> associated with the logged in <a href="../classes/User.html">User</a></p>
+                                <div class="io-description"><p>Get the <a href="../classes/TokenWrapper.html">token</a> associated with the current <a href="../classes/User.html">User</a></p>
 </div>
 
                                 <div>
                                 </div>
                                 <div class="io-description">
                                     <b>Returns : </b>        <code><a href="../classes/TokenWrapper.html" target="_self" >Observable&lt;TokenWrapper&gt;</a></code>
-
-                                </div>
-                        </td>
-                    </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="user"></a>
-                        <span class="name"><b>user</b><a href="#user"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>user()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/core/http/auth.service.ts:49</a></div>
-                                </td>
-                            </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>Get the logged in <a href="../classes/User.html">User</a></p>
-</div>
-
-                                <div>
-                                </div>
-                                <div class="io-description">
-                                    <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
 
                                 </div>
                         </td>
@@ -531,12 +364,8 @@
 import { CoreModule } from &quot;@core/core.module&quot;;
 import { BehaviorSubject, Observable } from &quot;rxjs&quot;;
 import { TokenWrapper } from &quot;@core/model/token.model&quot;;
-import { Router } from &quot;@angular/router&quot;;
-import { plainToClass } from &quot;class-transformer&quot;;
 import { map } from &quot;rxjs/operators&quot;;
 import { User } from &quot;@core/model/user.model&quot;;
-import { HttpClient, HttpHeaders } from &quot;@angular/common/http&quot;;
-import { environment } from &quot;@env&quot;;
 
 /**
  * Service handling authentication logic
@@ -546,7 +375,7 @@ import { environment } from &quot;@env&quot;;
 })
 export class AuthService {
   /**
-   * The [token]{@link TokenWrapper} for the logged in {@link User}
+   * The [token]{@link TokenWrapper} for the current {@link User}
    * @type {BehaviorSubject&lt;TokenWrapper&gt;} BehaviorSubject containing the token
    * @private
    */
@@ -555,7 +384,7 @@ export class AuthService {
   );
 
   /**
-   * Get the [token]{@link TokenWrapper} associated with the logged in {@link User}
+   * Get the [token]{@link TokenWrapper} associated with the current {@link User}
    * @returns {Observable&lt;TokenWrapper&gt;} Observable containing the token
    */
   public get token(): Observable&lt;TokenWrapper&gt; {
@@ -563,67 +392,26 @@ export class AuthService {
   }
 
   /**
-   * The logged in {@link User}
-   * @type {BehaviorSubject&lt;User&gt;} BehaviorSubject containing the logged in user
-   * @private
-   */
-  private userSubject: BehaviorSubject&lt;User&gt; &#x3D; new BehaviorSubject&lt;User&gt;(
-    new User()
-  );
-
-  /**
-   * Get the logged in {@link User}
-   * @returns {Observable&lt;User&gt;} Observable containing the logged in user
-   */
-  public get user(): Observable&lt;User&gt; {
-    return this.userSubject.asObservable();
-  }
-
-  /**
    * @ignore
-   * @param {Router} router
-   * @param {HttpClient} http
    */
-  constructor(private router: Router, private http: HttpClient) {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  constructor() {}
 
   /**
-   * Retrieves the current {@link User}&#x27;s info from Discord
+   * Stores the {@link TokenWrapper} received from Discord OAuth2 implicit grant
    * @param {TokenWrapper} tokenWrapper Object containing the access token
-   * @returns {Observable&lt;void&gt;} Used for validation of successful retrieval of the current user
+   * @returns {Observable&lt;TokenWrapper&gt;} Used for validation of successful token storage
    */
-  public login(tokenWrapper: TokenWrapper): Observable&lt;void&gt; {
+  public storeToken(tokenWrapper: TokenWrapper): void {
     this.tokenSubject.next(tokenWrapper);
-    return this.getUserInfo(tokenWrapper).pipe(
-      map((user: User) &#x3D;&gt; this.userSubject.next(user))
-    );
   }
 
   /**
-   * Helper for requesting the logged in {@link User}&#x27;s information from Discord
-   * @param {TokenWrapper} tokenWrapper Object containing the access token to authenticate the request to Discord
-   * @returns {Observable&lt;User&gt;} Observable containing the logged in user
-   * @private
+   * Helper method determining the validity of the stored {@link TokenWrapper}
+   * @returns {Observable&lt;boolean&gt;} Observable containing the token&#x27;s validity status
    */
-  private getUserInfo(tokenWrapper: TokenWrapper): Observable&lt;User&gt; {
-    const headers: HttpHeaders &#x3D; new HttpHeaders({
-      Authorization: &#x60;${tokenWrapper?.tokenType} ${tokenWrapper?.accessToken}&#x60;
-    });
-    return this.http
-      .get&lt;User&gt;(&#x60;${environment.discordApiRootUrl}/users/@me&#x60;, {
-        headers
-      })
-      .pipe(map((user: User) &#x3D;&gt; plainToClass(User, user)));
-    // .pipe(catchError((error) &#x3D;&gt; this.router.navigate([&quot;/login&quot;])));
-  }
-
-  /**
-   * Helper method to validate the current {@link User} is logged in
-   * @returns {Observable&lt;boolean&gt;} Observable containing the current user&#x27;s authentication status
-   */
-  public isLoggedIn(): Observable&lt;boolean&gt; {
-    return this.user.pipe(
-      map((user: User) &#x3D;&gt; user.id !&#x3D; null &amp;&amp; user.username !&#x3D; null)
-    );
+  public isValidToken(): Observable&lt;boolean&gt; {
+    return this.token.pipe(map((token: TokenWrapper) &#x3D;&gt; token.isValid()));
   }
 }
 </code></pre>

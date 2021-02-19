@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>siltstride-admin-web documentation</title>
+        <title>Siltstride Admin docs</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">siltstride-admin-web documentation</a>
+            <a href="../" class="navbar-brand">Siltstride Admin docs</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -62,14 +62,15 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/layout/auth-redirect/auth-redirect.component.ts</code>
+    <code>src/app/layout/auth-redirect/presentation/auth-redirect.component.ts</code>
 </p>
 
     <p class="comment">
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Component handling the redirect from <a href="https://discord.com/developers/docs/topics/oauth2#implicit-grant">Discord&#39;s OAuth2 implicit grant</a></p>
+        <p>Component handling the redirect from
+<a href="https://discord.com/developers/docs/topics/oauth2#implicit-grant">Discord&#39;s OAuth2 implicit grant</a></p>
 
     </p>
 
@@ -142,10 +143,6 @@
                                     <span class="modifier">Public</span>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#transformFragmentToTokenWrapper">transformFragmentToTokenWrapper</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -206,99 +203,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/layout/auth-redirect/auth-redirect.component.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/layout/auth-redirect/presentation/auth-redirect.component.ts:29</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Retrieve the URL fragment and login</p>
+                    <div class="io-description"><p>Retrieve the <a href="../classes/TokenWrapper.html">token</a> from the URL fragment and store it</p>
 </div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="transformFragmentToTokenWrapper"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            transformFragmentToTokenWrapper
-                        </b>
-                        <a href="#transformFragmentToTokenWrapper"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>transformFragmentToTokenWrapper(fragment: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/app/layout/auth-redirect/auth-redirect.component.ts:55</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Helper transforming the provided URL fragment string into the equivalent <a href="../classes/TokenWrapper.html">TokenWrapper</a> object</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>fragment</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>URL fragment to transform</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/TokenWrapper.html" target="_self" >TokenWrapper</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Transformed object containing the access token response attributes</p>
 
                     </div>
                 </td>
@@ -327,12 +244,13 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/layout/auth-redirect/auth-redirect.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/layout/auth-redirect/presentation/auth-redirect.component.ts:43</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Helper accessor returning the <a href="../miscellaneous/variables.html#mouseParallaxHelper">mouseParallaxHelper</a> function for use in the HTML template</p>
+                                <div class="io-description"><p>Helper accessor returning the <a href="../miscellaneous/variables.html#mouseParallaxHelper">mouseParallaxHelper</a> function for use
+in the HTML template</p>
 </div>
 
                                 <div>
@@ -354,12 +272,12 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
 import { mouseParallaxHelper } from &quot;@core/helper/mouse-parallax.helper&quot;;
 import { ActivatedRoute, Router } from &quot;@angular/router&quot;;
-import { AuthService } from &quot;@core/http/auth.service&quot;;
 import { TokenWrapper } from &quot;@core/model/token.model&quot;;
-import { plainToClass } from &quot;class-transformer&quot;;
+import { AuthService } from &quot;@core/http/auth.service&quot;;
 
 /**
- * Component handling the redirect from [Discord&#x27;s OAuth2 implicit grant]{@link https://discord.com/developers/docs/topics/oauth2#implicit-grant}
+ * Component handling the redirect from
+ * [Discord&#x27;s OAuth2 implicit grant]{@link https://discord.com/developers/docs/topics/oauth2#implicit-grant}
  */
 @Component({
   selector: &quot;siltstride-auth-redirect&quot;,
@@ -369,60 +287,32 @@ import { plainToClass } from &quot;class-transformer&quot;;
 export class AuthRedirectComponent implements OnInit {
   /**
    * @ignore
-   * @param {ActivatedRoute} route
-   * @param {Router} router
-   * @param {AuthService} authService
    */
   constructor(
+    private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router,
-    private authService: AuthService
+    private router: Router
   ) {}
 
   /**
-   * Helper accessor returning the {@link mouseParallaxHelper} function for use in the HTML template
-   * @returns {(element: HTMLElement, event: MouseEvent) &#x3D;&gt; void} Mouse parallax helper function
+   * Retrieve the [token]{@link TokenWrapper} from the URL fragment and store it
+   */
+  public ngOnInit() {
+    const tokenWrapper &#x3D; TokenWrapper.getTokenWrapperFromUrlFragment(
+      this.route.snapshot.fragment
+    );
+    this.authService.storeToken(tokenWrapper);
+    void this.router.navigate([&quot;app&quot;, &quot;dashboard&quot;]);
+  }
+
+  /**
+   * Helper accessor returning the {@link mouseParallaxHelper} function for use
+   * in the HTML template
+   * @returns {(element: HTMLElement, event: MouseEvent) &#x3D;&gt; void} Mouse parallax
+   * helper function
    */
   public get onMouseMove(): (element: HTMLElement, event: MouseEvent) &#x3D;&gt; void {
     return mouseParallaxHelper;
-  }
-
-  /**
-   * Retrieve the URL fragment and login
-   */
-  public ngOnInit(): void {
-    const tokenWrapper: TokenWrapper &#x3D; this.transformFragmentToTokenWrapper(
-      this.route.snapshot.fragment
-    );
-    this.authService.login(tokenWrapper).subscribe(() &#x3D;&gt; {
-      void this.router.navigate([&quot;app&quot;, &quot;dashboard&quot;]);
-    });
-  }
-
-  /**
-   * Helper transforming the provided URL fragment string into the equivalent {@link TokenWrapper} object
-   * @param {string} fragment URL fragment to transform
-   * @returns {TokenWrapper} Transformed object containing the access token response attributes
-   * @private
-   */
-  private transformFragmentToTokenWrapper(fragment: string): TokenWrapper {
-    const properties &#x3D; fragment?.split(&quot;&amp;&quot;);
-    const obj: {
-      access_token: string;
-      token_type: string;
-      expires_in: string;
-      scope: string;
-    } &#x3D; {
-      access_token: &quot;&quot;,
-      token_type: &quot;&quot;,
-      expires_in: &quot;&quot;,
-      scope: &quot;&quot;
-    };
-    properties?.forEach((value: string, index: number) &#x3D;&gt; {
-      const property &#x3D; properties[index]?.split(&quot;&#x3D;&quot;);
-      obj[property[0]] &#x3D; property[1];
-    });
-    return plainToClass(TokenWrapper, obj);
   }
 }
 </code></pre>
@@ -452,7 +342,7 @@ export class AuthRedirectComponent implements OnInit {
   display: block;
   // url must be called in scss template file.
   // Inline scss template would not resolve image url.
-  background-image: url(&quot;../../../assets/Fargoth.jpg&quot;);
+  background-image: url(&quot;../../../../assets/Fargoth.jpg&quot;);
   background-repeat: no-repeat;
   background-position: var(--mouseX) var(--mouseY);
   background-size: auto 150%;

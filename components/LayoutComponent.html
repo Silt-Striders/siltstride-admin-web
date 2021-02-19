@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>siltstride-admin-web documentation</title>
+        <title>Siltstride Admin docs</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">siltstride-admin-web documentation</a>
+            <a href="../" class="navbar-brand">Siltstride Admin docs</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -69,7 +69,10 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Layout Component defining the visual structure of the application</p>
+        <p>Layout Container Component defining the structure of the application</p>
+<p>This Component bears no Presentation responsibilities, so it is used as a
+Container component for <a href="../components/HeaderComponent.html">HeaderComponent</a> which bears Presentation
+responsibility</p>
 
     </p>
 
@@ -125,6 +128,33 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#user">user</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
 
 
 
@@ -133,14 +163,62 @@
 
 
 
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name"><b>user</b><a href="#user"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>user()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/layout/layout/layout.component.ts:24</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Helper accessor retrieving the current <a href="../classes/User.html">User</a></p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { User } from &quot;@core/model/user.model&quot;;
+import { Observable } from &quot;rxjs&quot;;
+import { map } from &quot;rxjs/operators&quot;;
+import { ActivatedRoute, Data } from &quot;@angular/router&quot;;
 
 /**
- * Layout Component defining the visual structure of the application
+ * Layout Container Component defining the structure of the application
+ *
+ * This Component bears no Presentation responsibilities, so it is used as a
+ * Container component for {@link HeaderComponent} which bears Presentation
+ * responsibility
  */
 @Component({
   selector: &quot;siltstride-layout&quot;,
@@ -149,10 +227,19 @@
 })
 export class LayoutComponent implements OnInit {
   /**
+   * Helper accessor retrieving the current {@link User}
+   * @returns {Observable&lt;User&gt;} Observable containing the logged in user
+   */
+  public get user(): Observable&lt;User&gt; {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return this.route.data.pipe(map((data: Data) &#x3D;&gt; data.user));
+  }
+
+  /**
    * @ignore
    */
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   /**
    * @ignore
@@ -165,7 +252,7 @@ export class LayoutComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;clr-main-container&gt;
-  &lt;siltstride-header&gt;&lt;/siltstride-header&gt;
+  &lt;siltstride-header [user]&#x3D;&quot;user | async&quot;&gt;&lt;/siltstride-header&gt;
   &lt;div class&#x3D;&quot;content-container&quot;&gt;
     &lt;div class&#x3D;&quot;content-area&quot;&gt;
       &lt;router-outlet&gt;&lt;/router-outlet&gt;
@@ -208,7 +295,7 @@ export class LayoutComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><clr-main-container>  <siltstride-header></siltstride-header>  <div class="content-container">    <div class="content-area">      <router-outlet></router-outlet>    </div>  </div>  <siltstride-footer></siltstride-footer></clr-main-container></div>'
+        var COMPONENT_TEMPLATE = '<div><clr-main-container>  <siltstride-header [user]="user | async"></siltstride-header>  <div class="content-container">    <div class="content-area">      <router-outlet></router-outlet>    </div>  </div>  <siltstride-footer></siltstride-footer></clr-main-container></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'siltstride-root'},{'name': 'AuthRedirectComponent', 'selector': 'siltstride-auth-redirect'},{'name': 'DashboardComponent', 'selector': 'siltstride-dashboard'},{'name': 'FooterComponent', 'selector': 'siltstride-footer'},{'name': 'HeaderComponent', 'selector': 'siltstride-header'},{'name': 'LayoutComponent', 'selector': 'siltstride-layout'},{'name': 'LoginComponent', 'selector': 'siltstride-login'},{'name': 'ServerComponent', 'selector': 'siltstride-server'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LayoutComponent'};
