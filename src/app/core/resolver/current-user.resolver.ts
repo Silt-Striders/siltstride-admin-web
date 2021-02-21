@@ -8,6 +8,10 @@ import { Injectable } from "@angular/core";
 import { User } from "@core/model";
 import { UserService } from "@core/http";
 
+/**
+ * Resolver service used to retrieve the current {@link User} from Discord
+ * prior to navigation completion
+ */
 @Injectable({
   providedIn: "root"
 })

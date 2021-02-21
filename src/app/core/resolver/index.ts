@@ -1,1 +1,1 @@
-export { CurrentUserResolver } from "./current-user-resolver.service";
+export { CurrentUserResolver } from "./current-user.resolver";
