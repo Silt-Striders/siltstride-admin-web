@@ -74,14 +74,27 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
 import { Routes, RouterModule } from &quot;@angular/router&quot;;
 import { DashboardComponent } from &quot;@module/home/page/dashboard/dashboard.component&quot;;
-import { AuthGuard } from &quot;@core/guard/auth.guard&quot;;
+import { AuthGuard } from &quot;@core/guard&quot;;
 import { ServerComponent } from &quot;@module/home/page/server/server.component&quot;;
+import { UserPreferencesComponent } from &quot;@module/home/page/user-preferences/user-preferences.component&quot;;
+import { CurrentUserResolver } from &quot;@core/resolver&quot;;
 
 const routes: Routes &#x3D; [
   {
     path: &quot;dashboard&quot;,
     component: DashboardComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: &quot;preferences&quot;,
+    component: UserPreferencesComponent,
+    canActivate: [AuthGuard],
+    data: {
+      title: &quot;Preferences&quot;
+    },
+    resolve: {
+      user: CurrentUserResolver
+    }
   },
   { path: &quot;server&quot;, component: ServerComponent, canActivate: [AuthGuard] }
 ];

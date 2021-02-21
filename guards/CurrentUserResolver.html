@@ -41,7 +41,7 @@
 
 <ol class="breadcrumb">
     <li>Guards</li>
-    <li>AuthRedirectResolver</li>
+    <li>CurrentUserResolver</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -59,9 +59,17 @@
             <h3>File</h3>
             </p>
             <p class="comment">
-                <code>src/app/core/resolver/auth-redirect.resolver.ts</code>
+                <code>src/app/core/resolver/current-user.resolver.ts</code>
             </p>
 
+                <p class="comment">
+                <h3>Description</h3>
+                </p>
+                <p class="comment">
+                    <p>Resolver service used to retrieve the current <a href="../classes/User.html">User</a> from Discord
+prior to navigation completion</p>
+
+                </p>
 
 
 
@@ -125,14 +133,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/core/resolver/auth-redirect.resolver.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/core/resolver/current-user.resolver.ts:31</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Resolve the intended route with the current <a href="../classes/User.html">User</a></p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -142,6 +152,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -156,6 +167,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>In transit to this route</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>state</td>
@@ -168,6 +183,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Snapshot of the current router state</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -179,7 +198,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Observable containing the current user</p>
+
                     </div>
                 </td>
             </tr>
@@ -197,13 +217,17 @@
 } from &quot;@angular/router&quot;;
 import { Observable } from &quot;rxjs&quot;;
 import { Injectable } from &quot;@angular/core&quot;;
-import { User } from &quot;@core/model/user.model&quot;;
-import { UserService } from &quot;@core/http/user.service&quot;;
+import { User } from &quot;@core/model&quot;;
+import { UserService } from &quot;@core/http&quot;;
 
+/**
+ * Resolver service used to retrieve the current {@link User} from Discord
+ * prior to navigation completion
+ */
 @Injectable({
   providedIn: &quot;root&quot;
 })
-export class AuthRedirectResolver implements Resolve&lt;User&gt; {
+export class CurrentUserResolver implements Resolve&lt;User&gt; {
   /**
    * @ignore
    * @param {UserService} userService
@@ -211,13 +235,15 @@ export class AuthRedirectResolver implements Resolve&lt;User&gt; {
   constructor(private userService: UserService) {}
 
   /**
-   *
-   * @param {ActivatedRouteSnapshot} route
-   * @param {RouterStateSnapshot} state
-   * @returns {Observable&lt;User&gt;}
+   * Resolve the intended route with the current {@link User}
+   * @param {ActivatedRouteSnapshot} route In transit to this route
+   * @param {RouterStateSnapshot} state Snapshot of the current router state
+   * @returns {Observable&lt;User&gt;} Observable containing the current user
    */
   public resolve(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     route: ActivatedRouteSnapshot,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state: RouterStateSnapshot
   ): Observable&lt;User&gt; {
     return this.userService.getCurrentUser();
@@ -253,7 +279,7 @@ export class AuthRedirectResolver implements Resolve&lt;User&gt; {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthRedirectResolver.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CurrentUserResolver.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

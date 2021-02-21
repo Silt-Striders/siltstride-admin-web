@@ -270,10 +270,10 @@ in the HTML template</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
-import { mouseParallaxHelper } from &quot;@core/helper/mouse-parallax.helper&quot;;
+import { mouseParallaxHelper } from &quot;@core/helper&quot;;
 import { ActivatedRoute, Router } from &quot;@angular/router&quot;;
-import { TokenWrapper } from &quot;@core/model/token.model&quot;;
-import { AuthService } from &quot;@core/http/auth.service&quot;;
+import { TokenWrapper } from &quot;@core/model&quot;;
+import { AuthService } from &quot;@core/service&quot;;
 
 /**
  * Component handling the redirect from
@@ -297,7 +297,7 @@ export class AuthRedirectComponent implements OnInit {
   /**
    * Retrieve the [token]{@link TokenWrapper} from the URL fragment and store it
    */
-  public ngOnInit() {
+  public ngOnInit(): void {
     const tokenWrapper &#x3D; TokenWrapper.getTokenWrapperFromUrlFragment(
       this.route.snapshot.fragment
     );
@@ -320,11 +320,10 @@ export class AuthRedirectComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div
-  #foregroundSpinner
-  (mousemove)&#x3D;&quot;onMouseMove(foregroundSpinner, $event)&quot;
-  class&#x3D;&quot;foreground-spinner&quot;
+  #blurredImage
+  (mousemove)&#x3D;&quot;onMouseMove(blurredImage, $event)&quot;
+  class&#x3D;&quot;blurred-background&quot;
 &gt;
-  &lt;clr-spinner&gt;&lt;/clr-spinner&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -333,33 +332,40 @@ export class AuthRedirectComponent implements OnInit {
                 <p class="comment">
                     <code>./auth-redirect.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.foreground-spinner::before {
-  content: &quot;&quot;;
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  display: block;
-  // url must be called in scss template file.
-  // Inline scss template would not resolve image url.
-  background-image: url(&quot;../../../../assets/Fargoth.jpg&quot;);
+                <pre class="line-numbers"><code class="language-scss">//.blurred-background::before {
+//  content: &quot;&quot;;
+//  position: fixed;
+//  left: 0;
+//  right: 0;
+//  z-index: -1;
+//  display: block;
+//  // url must be called in scss template file.
+//  // Inline scss template would not resolve image url.
+//  background-image: url(&quot;../../../../assets/Fargoth.jpg&quot;);
+//  background-repeat: no-repeat;
+//  background-position: var(--mouseX) var(--mouseY);
+//  background-size: auto 150%;
+//  width: 100%;
+//  height: 100%;
+//  -webkit-filter: blur(5px);
+//  -moz-filter: blur(5px);
+//  -o-filter: blur(5px);
+//  -ms-filter: blur(5px);
+//  filter: blur(5px);
+//}
+
+.blurred-background {
+  min-height: 100vh;
+  background-image: url(&quot;~assets/Fargoth.jpg&quot;);
   background-repeat: no-repeat;
   background-position: var(--mouseX) var(--mouseY);
   background-size: auto 150%;
-  width: 100%;
-  height: 100%;
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
   filter: blur(5px);
-}
-
-.foreground-spinner {
-  display: grid;
-  height: 100vh;
-  place-items: center;
-  z-index: 0;
+  z-index: -1;
 }
 </code></pre>
     </div>
@@ -389,8 +395,8 @@ export class AuthRedirectComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  #foregroundSpinner  (mousemove)="onMouseMove(foregroundSpinner, $event)"  class="foreground-spinner">  <clr-spinner></clr-spinner></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'siltstride-root'},{'name': 'AuthRedirectComponent', 'selector': 'siltstride-auth-redirect'},{'name': 'DashboardComponent', 'selector': 'siltstride-dashboard'},{'name': 'FooterComponent', 'selector': 'siltstride-footer'},{'name': 'HeaderComponent', 'selector': 'siltstride-header'},{'name': 'LayoutComponent', 'selector': 'siltstride-layout'},{'name': 'LoginComponent', 'selector': 'siltstride-login'},{'name': 'ServerComponent', 'selector': 'siltstride-server'}];
+        var COMPONENT_TEMPLATE = '<div><div  #blurredImage  (mousemove)="onMouseMove(blurredImage, $event)"  class="blurred-background"></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'siltstride-root'},{'name': 'AuthRedirectComponent', 'selector': 'siltstride-auth-redirect'},{'name': 'DashboardComponent', 'selector': 'siltstride-dashboard'},{'name': 'FooterComponent', 'selector': 'siltstride-footer'},{'name': 'HeaderComponent', 'selector': 'siltstride-header'},{'name': 'LayoutComponent', 'selector': 'siltstride-layout'},{'name': 'LoginComponent', 'selector': 'siltstride-login'},{'name': 'ServerComponent', 'selector': 'siltstride-server'},{'name': 'ThemeChooserComponent', 'selector': 'siltstride-theme-chooser'},{'name': 'UserPreferencesComponent', 'selector': 'siltstride-user-preferences'},{'name': 'UserProfileComponent', 'selector': 'siltstride-user-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AuthRedirectComponent'};
 </script>

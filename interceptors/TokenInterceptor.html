@@ -211,16 +211,16 @@ outgoing request handler event</p>
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
 import {
-  HttpRequest,
-  HttpHandler,
   HttpEvent,
+  HttpHandler,
+  HttpHeaders,
   HttpInterceptor,
-  HttpHeaders
+  HttpRequest
 } from &quot;@angular/common/http&quot;;
 import { Observable } from &quot;rxjs&quot;;
-import { AuthService } from &quot;@core/http/auth.service&quot;;
-import { concatMap, map, tap } from &quot;rxjs/operators&quot;;
-import { TokenWrapper } from &quot;@core/model/token.model&quot;;
+import { AuthService } from &quot;@core/service&quot;;
+import { concatMap, map } from &quot;rxjs/operators&quot;;
+import { TokenWrapper } from &quot;@core/model&quot;;
 
 /**
  * Interceptor used to inject {@link TokenWrapper#accessToken} in the
@@ -245,8 +245,8 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest&lt;unknown&gt;,
     next: HttpHandler
   ): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
-    const source &#x3D; this.authService.token;
-    const inner &#x3D; source.pipe(
+    const source &#x3D; this.authService.token$;
+    return source.pipe(
       map((token: TokenWrapper) &#x3D;&gt; token.accessToken),
       map((accessToken: string) &#x3D;&gt;
         request.headers.append(&quot;Authorization&quot;, &#x60;Bearer ${accessToken}&#x60;)
@@ -256,7 +256,6 @@ export class TokenInterceptor implements HttpInterceptor {
       ),
       concatMap((clone: HttpRequest&lt;unknown&gt;) &#x3D;&gt; next.handle(clone))
     );
-    return inner;
   }
 }
 </code></pre>

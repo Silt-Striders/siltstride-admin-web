@@ -28,85 +28,12 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content module">
+               <div class="content miscellaneous-enumerations">
                    <div class="content-data">
 
 
 
-<ol class="breadcrumb">
-    <li>Modules</li>
-    <li>AppRoutingModule</li>
-</ol>
 
-
-<ul class="nav nav-tabs" role="tablist">
-    <li  class="active" >
-        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-    </li>
-    <li >
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-    </li>
-</ul>
-
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-
-        <p class="comment">
-            <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/app/app-routing.module.ts</code>
-        </p>
-
-
-
-
-        <div class="container-fluid module">
-            <div class="row">
-            </div>
-        </div>
-
-
-    </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
-import { RouterModule, Routes } from &quot;@angular/router&quot;;
-import { LoginComponent } from &quot;./layout/login/login.component&quot;;
-import { LayoutComponent } from &quot;./layout/layout/layout.component&quot;;
-import { AuthRedirectComponent } from &quot;./layout/auth-redirect/presentation/auth-redirect.component&quot;;
-import { CurrentUserResolver } from &quot;@core/resolver&quot;;
-
-const routes: Routes &#x3D; [
-  { path: &quot;&quot;, pathMatch: &quot;full&quot;, redirectTo: &quot;/app/dashboard&quot; },
-  { path: &quot;login&quot;, component: LoginComponent },
-  { path: &quot;auth/redirect&quot;, component: AuthRedirectComponent },
-  {
-    path: &quot;app&quot;,
-    component: LayoutComponent,
-    resolve: {
-      user: CurrentUserResolver
-    },
-    children: [
-      {
-        path: &quot;&quot;,
-        loadChildren: () &#x3D;&gt;
-          &quot;import(\&quot;@module/home/home.module\&quot;).then((m) &#x3D;&gt; m.HomeModule)&quot;
-      }
-    ]
-  },
-  { path: &quot;**&quot;, redirectTo: &quot;/app/dashboard&quot; }
-];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}
-</code></pre>
-    </div>
-</div>
 
 
 
@@ -119,6 +46,61 @@ export class AppRoutingModule {}
 
                    
 
+<ol class="breadcrumb">
+  <li>Miscellaneous</li>
+  <li>Enumerations</li>
+</ol>
+
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#Theme" title="src/app/core/model/theme.model.ts"><b>Theme</b>&nbsp;&nbsp;&nbsp;(src/.../theme.model.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/core/model/theme.model.ts</h3>
+    <section>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="Theme"></a>
+                        <span class="name"><b>Theme</b><a href="#Theme"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Dark
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>dark</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                &nbsp;Light
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Value : </i><code>light</code>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -138,8 +120,8 @@ export class AppRoutingModule {}
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-enumerations';
+            var COMPODOC_CURRENT_PAGE_URL = 'enumerations.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

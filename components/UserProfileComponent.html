@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>LoginComponent</li>
+  <li>UserProfileComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,18 +62,9 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/layout/login/login.component.ts</code>
+    <code>src/app/shared/component/user-profile/user-profile.component.ts</code>
 </p>
 
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>Presentational Component used as the landing page for unauthenticated users
-of the application and where they will initiate the OAuth2 login handshake
-with Discord</p>
-
-    </p>
 
 
 
@@ -83,6 +74,10 @@ with Discord</p>
     <table class="table table-sm table-hover">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
 
 
 
@@ -95,19 +90,19 @@ with Discord</p>
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>siltstride-login</code></td>
+                <td class="col-md-9"><code>siltstride-user-profile</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./login.component.scss</code></td>
+                <td class="col-md-9"><code>./user-profile.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./login.component.html</code></td>
+                <td class="col-md-9"><code>./user-profile.component.html</code></td>
             </tr>
 
 
@@ -127,6 +122,20 @@ with Discord</p>
         <tbody>
 
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -140,10 +149,7 @@ with Discord</p>
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#discordOAuthImplicitFlowUrl">discordOAuthImplicitFlowUrl</a>
-                                </li>
-                                <li>
-                                    <a href="#onMouseMove">onMouseMove</a>
+                                    <a href="#user">user</a>
                                 </li>
                             </ul>
                         </td>
@@ -152,8 +158,49 @@ with Discord</p>
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/shared/component/user-profile/user-profile.component.ts:36</a></div>
+                            </td>
+                        </tr>
 
+            </tbody>
+        </table>
+</section>
 
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <b>user</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/component/user-profile/user-profile.component.ts:31</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Mutator setting the <a href="../classes/User.html">user</a> instance member for this component</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -167,63 +214,77 @@ with Discord</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="discordOAuthImplicitFlowUrl"></a>
-                        <span class="name"><b>discordOAuthImplicitFlowUrl</b><a href="#discordOAuthImplicitFlowUrl"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="user"></a>
+                        <span class="name"><b>user</b><a href="#user"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>discordOAuthImplicitFlowUrl()</code></span>
+                        <span class="accessor"><b>get</b><code>user()</code></span>
                     </td>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/layout/login/login.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/component/user-profile/user-profile.component.ts:22</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Helper accessor retrieving the Discord OAuth2 implicit grant URL configured
-for our application</p>
+                                <div class="io-description"><p>Accessor retrieving the <a href="../classes/User.html">User</a> object used for this component</p>
 </div>
 
                                 <div>
                                 </div>
                                 <div class="io-description">
-                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >User</a></code>
 
                                 </div>
                         </td>
                     </tr>
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="onMouseMove"></a>
-                        <span class="name"><b>onMouseMove</b><a href="#onMouseMove"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>onMouseMove()</code></span>
+                        <span class="accessor"><b>set</b><code>user(value)</code></span>
                     </td>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/layout/login/login.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/component/user-profile/user-profile.component.ts:31</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Helper accessor returning the <a href="../miscellaneous/variables.html#mouseParallaxHelper">mouseParallaxHelper</a> function for use
-in the HTML template</p>
+                                <div class="io-description"><p>Mutator setting the <a href="../classes/User.html">user</a> instance member for this component</p>
 </div>
 
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Optional</td>
+                                                        <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                            <td>
+                                                                    <code><p>The incoming user value</p>
+</code>
+                                                            </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
                                 <div>
                                 </div>
                                 <div class="io-description">
@@ -232,7 +293,6 @@ in the HTML template</p>
                                 </div>
                         </td>
                     </tr>
-
             </tbody>
         </table>
 </section>
@@ -240,43 +300,43 @@ in the HTML template</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &quot;@angular/core&quot;;
-import { environment } from &quot;@env&quot;;
-import { mouseParallaxHelper } from &quot;@core/helper&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, Input } from &quot;@angular/core&quot;;
+import { User } from &quot;@core/model&quot;;
 
-/**
- * Presentational Component used as the landing page for unauthenticated users
- * of the application and where they will initiate the OAuth2 login handshake
- * with Discord
- */
 @Component({
-  selector: &quot;siltstride-login&quot;,
-  templateUrl: &quot;./login.component.html&quot;,
-  styleUrls: [&quot;./login.component.scss&quot;]
+  selector: &quot;siltstride-user-profile&quot;,
+  templateUrl: &quot;./user-profile.component.html&quot;,
+  styleUrls: [&quot;./user-profile.component.scss&quot;],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent {
-  /**
-   * Helper accessor retrieving the Discord OAuth2 implicit grant URL configured
-   * for our application
-   * @returns {string} Discord OAuth2 implicit grant URL
-   */
-  public get discordOAuthImplicitFlowUrl(): string {
-    return environment.discordOAuthImplicitFlowUrl;
-  }
-
-  /**
-   * Helper accessor returning the {@link mouseParallaxHelper} function for use
-   * in the HTML template
-   * @returns {(element: HTMLElement, event: MouseEvent) &#x3D;&gt; void} Mouse parallax
-   * helper function
-   */
-  public get onMouseMove(): (element: HTMLElement, event: MouseEvent) &#x3D;&gt; void {
-    return mouseParallaxHelper;
-  }
-
+export class UserProfileComponent {
   /**
    * @ignore
+   * @type {User}
+   * @private
    */
+  private _user: User;
+
+  /**
+   * Accessor retrieving the {@link User} object used for this component
+   * @returns {User} The user in this component
+   */
+  public get user(): User {
+    return this._user;
+  }
+
+  /**
+   * Mutator setting the [user]{@link User} instance member for this component
+   * @param {User} value The incoming user value
+   */
+  @Input()
+  public set user(value: User) {
+    if (value &#x3D;&#x3D; null) {
+      throw new Error(&quot;Must provide a valid User object!&quot;);
+    }
+    this._user &#x3D; value;
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 }
@@ -284,41 +344,43 @@ export class LoginComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div
-  #loginWrapper
-  (mousemove)&#x3D;&quot;onMouseMove(loginWrapper, $event)&quot;
-  class&#x3D;&quot;login-wrapper&quot;
-&gt;
-  &lt;form class&#x3D;&quot;login&quot;&gt;
-    &lt;section class&#x3D;&quot;title&quot;&gt;
-      &lt;h3 class&#x3D;&quot;welcome&quot;&gt;Welcome to&lt;/h3&gt;
-      Siltstride Admin
-    &lt;/section&gt;
-    &lt;div class&#x3D;&quot;login-group&quot;&gt;
-      &lt;a [href]&#x3D;&quot;discordOAuthImplicitFlowUrl&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;
-        Log In with Discord
-      &lt;/a&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot;&gt;
+  &lt;div class&#x3D;&quot;card-block&quot;&gt;
+    &lt;div class&#x3D;&quot;card-media-block&quot;&gt;
+      &lt;img [src]&#x3D;&quot;user.avatarUrl&quot; class&#x3D;&quot;card-media-image&quot; /&gt;
+      &lt;div class&#x3D;&quot;card-media-description&quot;&gt;
+        &lt;span class&#x3D;&quot;card-media-title&quot;&gt;{{ user.username }}&lt;/span&gt;
+        &lt;span class&#x3D;&quot;card-media-text&quot;&gt;#{{ user.discriminator }}&lt;/span&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/form&gt;
+    &lt;div class&#x3D;&quot;card-text&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+    &lt;a
+      href&#x3D;&quot;mailto:{{ user.email }}&quot;
+      target&#x3D;&quot;_blank&quot;
+      class&#x3D;&quot;btn btn-sm btn-link&quot;
+    &gt;
+      Email
+    &lt;/a&gt;
+    &lt;a
+      href&#x3D;&quot;https://discordapp.com/channels/@me/{{ user.id }}&quot;
+      target&#x3D;&quot;_blank&quot;
+      class&#x3D;&quot;btn btn-sm btn-link&quot;
+    &gt;
+      DM
+    &lt;/a&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./login.component.scss</code>
+                    <code>./user-profile.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">:host {
-  --mouseX: 50%;
-  --mouseY: 50%;
-}
-
-.login-wrapper {
-  min-height: 100vh;
-  background-image: url(&quot;~assets/Fargoth.jpg&quot;);
-  background-repeat: no-repeat;
-  background-position: var(--mouseX) var(--mouseY);
-  background-size: auto 150%;
+                <pre class="line-numbers"><code class="language-scss">.card-media-image {
+  border-radius: 50%;
 }
 </code></pre>
     </div>
@@ -348,10 +410,10 @@ export class LoginComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  #loginWrapper  (mousemove)="onMouseMove(loginWrapper, $event)"  class="login-wrapper">  <form class="login">    <section class="title">      <h3 class="welcome">Welcome to</h3>      Siltstride Admin    </section>    <div class="login-group">      <a [href]="discordOAuthImplicitFlowUrl" class="btn btn-primary">        Log In with Discord      </a>    </div>  </form></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="card">  <div class="card-block">    <div class="card-media-block">      <img [src]="user.avatarUrl" class="card-media-image" />      <div class="card-media-description">        <span class="card-media-title">{{ user.username }}</span>        <span class="card-media-text">#{{ user.discriminator }}</span>      </div>    </div>    <div class="card-text">...</div>  </div>  <div class="card-footer">    <a      href="mailto:{{ user.email }}"      target="_blank"      class="btn btn-sm btn-link"    >      Email    </a>    <a      href="https://discordapp.com/channels/@me/{{ user.id }}"      target="_blank"      class="btn btn-sm btn-link"    >      DM    </a>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'siltstride-root'},{'name': 'AuthRedirectComponent', 'selector': 'siltstride-auth-redirect'},{'name': 'DashboardComponent', 'selector': 'siltstride-dashboard'},{'name': 'FooterComponent', 'selector': 'siltstride-footer'},{'name': 'HeaderComponent', 'selector': 'siltstride-header'},{'name': 'LayoutComponent', 'selector': 'siltstride-layout'},{'name': 'LoginComponent', 'selector': 'siltstride-login'},{'name': 'ServerComponent', 'selector': 'siltstride-server'},{'name': 'ThemeChooserComponent', 'selector': 'siltstride-theme-chooser'},{'name': 'UserPreferencesComponent', 'selector': 'siltstride-user-preferences'},{'name': 'UserProfileComponent', 'selector': 'siltstride-user-profile'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
+    var ACTUAL_COMPONENT = {'name': 'UserProfileComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -386,7 +448,7 @@ export class LoginComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'LoginComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserProfileComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

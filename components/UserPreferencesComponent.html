@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>DashboardComponent</li>
+  <li>UserPreferencesComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,16 +62,9 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/module/home/page/dashboard/dashboard.component.ts</code>
+    <code>src/app/module/home/page/user-preferences/user-preferences.component.ts</code>
 </p>
 
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>Component used as the landing page for authenticated users of the application where they will see innocuous overview information related to the TES3MP server</p>
-
-    </p>
 
 
     <p class="comment">
@@ -99,19 +92,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>siltstride-dashboard</code></td>
+                <td class="col-md-9"><code>siltstride-user-preferences</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./dashboard.component.scss</code></td>
+                <td class="col-md-9"><code>./user-preferences.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./dashboard.component.html</code></td>
+                <td class="col-md-9"><code>./user-preferences.component.html</code></td>
             </tr>
 
 
@@ -144,7 +137,13 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#discordServerWidgetUrl">discordServerWidgetUrl</a>
+                                    <a href="#theme$">theme$</a>
+                                </li>
+                                <li>
+                                    <a href="#theme">theme</a>
+                                </li>
+                                <li>
+                                    <a href="#title$">title$</a>
                                 </li>
                             </ul>
                         </td>
@@ -168,30 +167,107 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="discordServerWidgetUrl"></a>
-                        <span class="name"><b>discordServerWidgetUrl</b><a href="#discordServerWidgetUrl"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="theme$"></a>
+                        <span class="name"><b>theme$</b><a href="#theme$"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>discordServerWidgetUrl()</code></span>
+                        <span class="accessor"><b>get</b><code>theme$()</code></span>
                     </td>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/module/home/page/dashboard/dashboard.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/module/home/page/user-preferences/user-preferences.component.ts:14</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="theme"></a>
+                        <span class="name"><b>theme</b><a href="#theme"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>theme(value)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/module/home/page/user-preferences/user-preferences.component.ts:18</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Helper accessor retrieving the Discord server widget URL configured for our application</p>
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="title$"></a>
+                        <span class="name"><b>title$</b><a href="#title$"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>title$()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/module/home/page/user-preferences/user-preferences.component.ts:26</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Accessor retrieving the page title from <a href="../modules/HomeRoutingModule.html">HomeRoutingModule</a></p>
 </div>
 
                                 <div>
                                 </div>
                                 <div class="io-description">
-                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
 
                                 </div>
                         </td>
@@ -205,30 +281,44 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
-import { environment } from &quot;@env&quot;;
+import { ThemeService } from &quot;@core/service/theme.service&quot;;
+import { Observable } from &quot;rxjs&quot;;
+import { ActivatedRoute, Data } from &quot;@angular/router&quot;;
+import { map } from &quot;rxjs/operators&quot;;
+import { Theme } from &quot;@core/model/theme.model&quot;;
 
-/**
- * Component used as the landing page for authenticated users of the application where they will see innocuous overview information related to the TES3MP server
- */
 @Component({
-  selector: &quot;siltstride-dashboard&quot;,
-  templateUrl: &quot;./dashboard.component.html&quot;,
-  styleUrls: [&quot;./dashboard.component.scss&quot;]
+  selector: &quot;siltstride-user-preferences&quot;,
+  templateUrl: &quot;./user-preferences.component.html&quot;,
+  styleUrls: [&quot;./user-preferences.component.scss&quot;]
 })
-export class DashboardComponent implements OnInit {
+export class UserPreferencesComponent implements OnInit {
+  public get theme$(): Observable&lt;Theme&gt; {
+    return this.themeService.theme$;
+  }
+
+  public set theme(value: Theme) {
+    this.themeService.setTheme(value);
+  }
+
   /**
-   * Helper accessor retrieving the Discord server widget URL configured for our application
-   * @returns {string} Discord server widget URL
+   * Accessor retrieving the page title from {@link HomeRoutingModule}
+   * @returns {Observable&lt;string&gt;} Observable containing the page title
    */
-  public get discordServerWidgetUrl(): string {
-    return environment.discordServerWidgetUrl;
+  public get title$(): Observable&lt;string&gt; {
+    return this.route.data.pipe(map((data: Data) &#x3D;&gt; data[&quot;title&quot;] as string));
   }
 
   /**
    * @ignore
+   * @param {ActivatedRoute} route
+   * @param {ThemeService} themeService
    */
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private themeService: ThemeService
+  ) {}
 
   /**
    * @ignore
@@ -240,33 +330,19 @@ export class DashboardComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;clr-row&quot;&gt;
-  &lt;div class&#x3D;&quot;clr-col&quot;&gt;
-    &lt;h1&gt;Dashboard&lt;/h1&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;clr-col-sm-3&quot;&gt;
-    &lt;iframe
-      class&#x3D;&quot;discord-server-widget&quot;
-      [src]&#x3D;&quot;discordServerWidgetUrl | safeResourceUrl&quot;
-      allowtransparency&#x3D;&quot;true&quot;
-      frameborder&#x3D;&quot;0&quot;
-      sandbox&#x3D;&quot;allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts&quot;
-    &gt;&lt;/iframe&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;h1&gt;{{ title$ | async }}&lt;/h1&gt;
+&lt;siltstride-theme-chooser
+  [theme]&#x3D;&quot;theme$ | async&quot;
+  (themeChange)&#x3D;&quot;theme &#x3D; $event&quot;
+&gt;&lt;/siltstride-theme-chooser&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./dashboard.component.scss</code>
+                    <code>./user-preferences.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.discord-server-widget {
-  float: right;
-  width: 350px;
-  height: 500px;
-}
-</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -294,10 +370,10 @@ export class DashboardComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="clr-row">  <div class="clr-col">    <h1>Dashboard</h1>  </div>  <div class="clr-col-sm-3">    <iframe      class="discord-server-widget"      [src]="discordServerWidgetUrl | safeResourceUrl"      allowtransparency="true"      frameborder="0"      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"    ></iframe>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><h1>{{ title$ | async }}</h1><siltstride-theme-chooser  [theme]="theme$ | async"  (themeChange)="theme = $event"></siltstride-theme-chooser></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'siltstride-root'},{'name': 'AuthRedirectComponent', 'selector': 'siltstride-auth-redirect'},{'name': 'DashboardComponent', 'selector': 'siltstride-dashboard'},{'name': 'FooterComponent', 'selector': 'siltstride-footer'},{'name': 'HeaderComponent', 'selector': 'siltstride-header'},{'name': 'LayoutComponent', 'selector': 'siltstride-layout'},{'name': 'LoginComponent', 'selector': 'siltstride-login'},{'name': 'ServerComponent', 'selector': 'siltstride-server'},{'name': 'ThemeChooserComponent', 'selector': 'siltstride-theme-chooser'},{'name': 'UserPreferencesComponent', 'selector': 'siltstride-user-preferences'},{'name': 'UserProfileComponent', 'selector': 'siltstride-user-profile'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
+    var ACTUAL_COMPONENT = {'name': 'UserPreferencesComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -332,7 +408,7 @@ export class DashboardComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'DashboardComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserPreferencesComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

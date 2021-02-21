@@ -147,7 +147,10 @@ responsibility</p>
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#user">user</a>
+                                    <a href="#user$">user$</a>
+                                </li>
+                                <li>
+                                    <a href="#url$">url$</a>
                                 </li>
                             </ul>
                         </td>
@@ -171,14 +174,14 @@ responsibility</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="user"></a>
-                        <span class="name"><b>user</b><a href="#user"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="user$"></a>
+                        <span class="name"><b>user$</b><a href="#user$"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>user()</code></span>
+                        <span class="accessor"><b>get</b><code>user$()</code></span>
                     </td>
                 </tr>
                             <tr>
@@ -202,16 +205,52 @@ responsibility</p>
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="url$"></a>
+                        <span class="name"><b>url$</b><a href="#url$"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>url$()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/layout/layout/layout.component.ts:34</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Helper accessor retrieving the current URL for use in displaying ephemeral
+<a href="../components/HeaderComponent.html">Header</a> links</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
 </section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
-import { User } from &quot;@core/model/user.model&quot;;
+import { User } from &quot;@core/model&quot;;
 import { Observable } from &quot;rxjs&quot;;
 import { map } from &quot;rxjs/operators&quot;;
-import { ActivatedRoute, Data } from &quot;@angular/router&quot;;
+import { ActivatedRoute, Data, UrlSegment } from &quot;@angular/router&quot;;
 
 /**
  * Layout Container Component defining the structure of the application
@@ -230,9 +269,20 @@ export class LayoutComponent implements OnInit {
    * Helper accessor retrieving the current {@link User}
    * @returns {Observable&lt;User&gt;} Observable containing the logged in user
    */
-  public get user(): Observable&lt;User&gt; {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return this.route.data.pipe(map((data: Data) &#x3D;&gt; data.user));
+  public get user$(): Observable&lt;User&gt; {
+    return this.route.data.pipe(map((data: Data) &#x3D;&gt; data[&quot;user&quot;] as User));
+  }
+
+  /**
+   * Helper accessor retrieving the current URL for use in displaying ephemeral
+   * [Header]{@link HeaderComponent} links
+   * @returns {Observable&lt;Array&lt;UrlSegment&gt;&gt;} Observable containing the current
+   * URL
+   */
+  public get url$(): Observable&lt;string&gt; {
+    return this.route.url.pipe(
+      map((segments: Array&lt;UrlSegment&gt;) &#x3D;&gt; segments.join(&quot;&quot;))
+    );
   }
 
   /**
@@ -252,7 +302,7 @@ export class LayoutComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;clr-main-container&gt;
-  &lt;siltstride-header [user]&#x3D;&quot;user | async&quot;&gt;&lt;/siltstride-header&gt;
+  &lt;siltstride-header [user]&#x3D;&quot;user$ | async&quot;&gt;&lt;/siltstride-header&gt;
   &lt;div class&#x3D;&quot;content-container&quot;&gt;
     &lt;div class&#x3D;&quot;content-area&quot;&gt;
       &lt;router-outlet&gt;&lt;/router-outlet&gt;
@@ -295,8 +345,8 @@ export class LayoutComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><clr-main-container>  <siltstride-header [user]="user | async"></siltstride-header>  <div class="content-container">    <div class="content-area">      <router-outlet></router-outlet>    </div>  </div>  <siltstride-footer></siltstride-footer></clr-main-container></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'siltstride-root'},{'name': 'AuthRedirectComponent', 'selector': 'siltstride-auth-redirect'},{'name': 'DashboardComponent', 'selector': 'siltstride-dashboard'},{'name': 'FooterComponent', 'selector': 'siltstride-footer'},{'name': 'HeaderComponent', 'selector': 'siltstride-header'},{'name': 'LayoutComponent', 'selector': 'siltstride-layout'},{'name': 'LoginComponent', 'selector': 'siltstride-login'},{'name': 'ServerComponent', 'selector': 'siltstride-server'}];
+        var COMPONENT_TEMPLATE = '<div><clr-main-container>  <siltstride-header [user]="user$ | async"></siltstride-header>  <div class="content-container">    <div class="content-area">      <router-outlet></router-outlet>    </div>  </div>  <siltstride-footer></siltstride-footer></clr-main-container></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'siltstride-root'},{'name': 'AuthRedirectComponent', 'selector': 'siltstride-auth-redirect'},{'name': 'DashboardComponent', 'selector': 'siltstride-dashboard'},{'name': 'FooterComponent', 'selector': 'siltstride-footer'},{'name': 'HeaderComponent', 'selector': 'siltstride-header'},{'name': 'LayoutComponent', 'selector': 'siltstride-layout'},{'name': 'LoginComponent', 'selector': 'siltstride-login'},{'name': 'ServerComponent', 'selector': 'siltstride-server'},{'name': 'ThemeChooserComponent', 'selector': 'siltstride-theme-chooser'},{'name': 'UserPreferencesComponent', 'selector': 'siltstride-user-preferences'},{'name': 'UserProfileComponent', 'selector': 'siltstride-user-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LayoutComponent'};
 </script>
