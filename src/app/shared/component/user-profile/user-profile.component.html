@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-block">
+    <div class="card-media-block">
+      <img [src]="user.avatarUrl" class="card-media-image" />
+      <div class="card-media-description">
+        <span class="card-media-title">{{ user.username }}</span>
+        <span class="card-media-text">#{{ user.discriminator }}</span>
+      </div>
+    </div>
+    <div class="card-text">...</div>
+  </div>
+  <div class="card-footer">
+    <a
+      href="mailto:{{ user.email }}"
+      target="_blank"
+      class="btn btn-sm btn-link"
+    >
+      Email
+    </a>
+    <a
+      href="https://discordapp.com/channels/@me/{{ user.id }}"
+      target="_blank"
+      class="btn btn-sm btn-link"
+    >
+      DM
+    </a>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<h1>{{ title$ | async }}</h1>
+<siltstride-theme-chooser
+  [theme]="theme$ | async"
+  (themeChange)="theme = $event"
+></siltstride-theme-chooser>

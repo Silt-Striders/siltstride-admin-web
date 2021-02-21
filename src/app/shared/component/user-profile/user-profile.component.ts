@@ -1,16 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 import { User } from "@core/model";
 
-/**
- * Header Presentation Component used in the application layout
- */
 @Component({
-  selector: "siltstride-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"],
+  selector: "siltstride-user-profile",
+  templateUrl: "./user-profile.component.html",
+  styleUrls: ["./user-profile.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent {
+export class UserProfileComponent {
   /**
    * @ignore
    * @type {User}
@@ -38,18 +35,6 @@ export class HeaderComponent {
     this._user = value;
   }
 
-  /**
-   * Helper accessor retrieving the CSS url() function call with the
-   * {@link User}'s avatar URL inserted as a parameter
-   * @returns {string} The CSS url() function call
-   */
-  public get backgroundImageUrl(): string {
-    return `url(${this.user.avatarUrl})`;
-  }
-
-  /**
-   * @ignore
-   */
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 }

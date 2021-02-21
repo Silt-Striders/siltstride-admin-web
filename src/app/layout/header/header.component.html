@@ -1,3 +1,20 @@
+<clr-alert
+  *ngIf="!user.mfaEnabled"
+  clrAlertAppLevel="true"
+  clrAlertType="warning"
+  role="alert"
+>
+  <clr-alert-item>
+    Consider enabling&nbsp;
+    <a
+      href="https://support.discord.com/hc/en-us/articles/219576828-Setting-up-Two-Factor-Authentication"
+      target="_blank"
+    >
+      2-Factor authentication
+    </a>
+    &nbsp;on your Discord account!
+  </clr-alert-item>
+</clr-alert>
 <clr-header class="header-6">
   <div class="branding">
     <a href="#" class="nav-link">
@@ -10,25 +27,34 @@
       [routerLink]="['/app/dashboard']"
       routerLinkActive="active"
       class="nav-link nav-text"
-      >Dashboard</a
     >
+      Dashboard
+    </a>
     <a
       [routerLink]="['/app/server']"
       routerLinkActive="active"
       class="nav-link nav-text"
-      >Server</a
     >
+      Server
+    </a>
   </div>
   <div class="header-actions">
-    <a href="javascript://" class="nav-link nav-icon-text">
-      <span
-        class="clr-icon user-avatar"
-        [style.background-image]="backgroundImageUrl"
-        alt="avatar"
-      ></span>
-      <span class="nav-text"
-        >{{ user.displayName }}</span
-      >
-    </a>
+    <clr-dropdown>
+      <button
+        href="javascript://"
+        class="nav-text nav-icon-text"
+      clrDropdownToggle>
+        <span
+          class="clr-icon user-avatar"
+          [style.background-image]="backgroundImageUrl"
+          alt="avatar"
+        ></span>
+        {{ user.displayName }}
+        <clr-icon shape="angle down"></clr-icon>
+      </button>
+      <clr-dropdown-menu clrPosition="bottom-right">
+        <a [routerLink]="['/app/preferences']" clrDropdownItem>Preferences</a>
+      </clr-dropdown-menu>
+    </clr-dropdown>
   </div>
 </clr-header>

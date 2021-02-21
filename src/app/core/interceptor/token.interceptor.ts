@@ -1,15 +1,15 @@
 import { Injectable } from "@angular/core";
 import {
-  HttpRequest,
-  HttpHandler,
   HttpEvent,
+  HttpHandler,
+  HttpHeaders,
   HttpInterceptor,
-  HttpHeaders
+  HttpRequest
 } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { AuthService } from "@core/http/auth.service";
-import { concatMap, map, tap } from "rxjs/operators";
-import { TokenWrapper } from "@core/model/token.model";
+import { AuthService } from "@core/service";
+import { concatMap, map } from "rxjs/operators";
+import { TokenWrapper } from "@core/model";
 
 /**
  * Interceptor used to inject {@link TokenWrapper#accessToken} in the
@@ -34,8 +34,8 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    const source = this.authService.token;
-    const inner = source.pipe(
+    const source = this.authService.token$;
+    return source.pipe(
       map((token: TokenWrapper) => token.accessToken),
       map((accessToken: string) =>
         request.headers.append("Authorization", `Bearer ${accessToken}`)
@@ -45,6 +45,5 @@ export class TokenInterceptor implements HttpInterceptor {
       ),
       concatMap((clone: HttpRequest<unknown>) => next.handle(clone))
     );
-    return inner;
   }
 }

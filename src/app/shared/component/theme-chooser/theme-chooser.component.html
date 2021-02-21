@@ -1,0 +1,27 @@
+<h2>Theme</h2>
+<div class="clr-row">
+  <div class="clr-col-lg-1">
+    <a
+      href="javascript:void(0)"
+      (click)="newTheme = LocalTheme.Dark"
+      class="card clickable"
+      [class.clickable:hover]="theme === LocalTheme.Dark"
+    >
+      <div class="card-img">
+        <img src="assets/theme-dark.svg" alt="Dark Theme" />
+      </div>
+    </a>
+  </div>
+  <div class="clr-col-lg-1">
+    <a
+      href="javascript:void(0)"
+      (click)="newTheme = LocalTheme.Light"
+      class="card clickable"
+      [class.clickable:hover]="theme === LocalTheme.Light"
+    >
+      <div class="card-img">
+        <img src="assets/theme-light.svg" alt="Light Theme" />
+      </div>
+    </a>
+  </div>
+</div>

@@ -3,11 +3,10 @@ import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-  UrlTree,
   Router
 } from "@angular/router";
 import { Observable } from "rxjs";
-import { AuthService } from "@core/http/auth.service";
+import { AuthService } from "@core/service";
 import { tap } from "rxjs/operators";
 
 @Injectable({
@@ -23,10 +22,12 @@ export class AuthGuard implements CanActivate {
    * @returns {Observable<boolean>} Observable containing the token validity status
    */
   public canActivate(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     next: ActivatedRouteSnapshot,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state: RouterStateSnapshot
   ): Observable<boolean> {
-    return this.authService.isValidToken().pipe(
+    return this.authService.isValidToken$().pipe(
       tap((value: boolean) => {
         if (!value) {
           void this.router.navigate(["login"]);

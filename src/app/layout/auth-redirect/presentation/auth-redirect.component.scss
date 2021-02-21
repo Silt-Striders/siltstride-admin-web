@@ -1,28 +1,35 @@
-.foreground-spinner::before {
-  content: "";
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  display: block;
-  // url must be called in scss template file.
-  // Inline scss template would not resolve image url.
-  background-image: url("../../../../assets/Fargoth.jpg");
+//.blurred-background::before {
+//  content: "";
+//  position: fixed;
+//  left: 0;
+//  right: 0;
+//  z-index: -1;
+//  display: block;
+//  // url must be called in scss template file.
+//  // Inline scss template would not resolve image url.
+//  background-image: url("../../../../assets/Fargoth.jpg");
+//  background-repeat: no-repeat;
+//  background-position: var(--mouseX) var(--mouseY);
+//  background-size: auto 150%;
+//  width: 100%;
+//  height: 100%;
+//  -webkit-filter: blur(5px);
+//  -moz-filter: blur(5px);
+//  -o-filter: blur(5px);
+//  -ms-filter: blur(5px);
+//  filter: blur(5px);
+//}
+
+.blurred-background {
+  min-height: 100vh;
+  background-image: url("~assets/Fargoth.jpg");
   background-repeat: no-repeat;
   background-position: var(--mouseX) var(--mouseY);
   background-size: auto 150%;
-  width: 100%;
-  height: 100%;
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
   filter: blur(5px);
-}
-
-.foreground-spinner {
-  display: grid;
-  height: 100vh;
-  place-items: center;
-  z-index: 0;
+  z-index: -1;
 }

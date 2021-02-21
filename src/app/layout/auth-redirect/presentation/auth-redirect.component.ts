@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { mouseParallaxHelper } from "@core/helper/mouse-parallax.helper";
+import { mouseParallaxHelper } from "@core/helper";
 import { ActivatedRoute, Router } from "@angular/router";
-import { TokenWrapper } from "@core/model/token.model";
-import { AuthService } from "@core/http/auth.service";
+import { TokenWrapper } from "@core/model";
+import { AuthService } from "@core/service";
 
 /**
  * Component handling the redirect from
@@ -26,7 +26,7 @@ export class AuthRedirectComponent implements OnInit {
   /**
    * Retrieve the [token]{@link TokenWrapper} from the URL fragment and store it
    */
-  public ngOnInit() {
+  public ngOnInit(): void {
     const tokenWrapper = TokenWrapper.getTokenWrapperFromUrlFragment(
       this.route.snapshot.fragment
     );

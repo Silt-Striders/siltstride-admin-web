@@ -1,9 +1,8 @@
 import { Injectable } from "@angular/core";
 import { CoreModule } from "@core/core.module";
 import { BehaviorSubject, Observable } from "rxjs";
-import { TokenWrapper } from "@core/model/token.model";
+import { TokenWrapper } from "@core/model";
 import { map } from "rxjs/operators";
-import { User } from "@core/model/user.model";
 
 /**
  * Service handling authentication logic
@@ -25,7 +24,7 @@ export class AuthService {
    * Get the [token]{@link TokenWrapper} associated with the current {@link User}
    * @returns {Observable<TokenWrapper>} Observable containing the token
    */
-  public get token(): Observable<TokenWrapper> {
+  public get token$(): Observable<TokenWrapper> {
     return this.tokenSubject.asObservable();
   }
 
@@ -48,7 +47,7 @@ export class AuthService {
    * Helper method determining the validity of the stored {@link TokenWrapper}
    * @returns {Observable<boolean>} Observable containing the token's validity status
    */
-  public isValidToken(): Observable<boolean> {
-    return this.token.pipe(map((token: TokenWrapper) => token.isValid()));
+  public isValidToken$(): Observable<boolean> {
+    return this.token$.pipe(map((token: TokenWrapper) => token.isValid()));
   }
 }

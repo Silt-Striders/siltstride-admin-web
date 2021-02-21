@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { environment } from "@env";
-import { mouseParallaxHelper } from "@core/helper/mouse-parallax.helper";
+import { mouseParallaxHelper } from "@core/helper";
 
 /**
  * Presentational Component used as the landing page for unauthenticated users
@@ -12,7 +12,7 @@ import { mouseParallaxHelper } from "@core/helper/mouse-parallax.helper";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   /**
    * Helper accessor retrieving the Discord OAuth2 implicit grant URL configured
    * for our application
@@ -37,10 +37,4 @@ export class LoginComponent implements OnInit {
    */
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
-
-  /**
-   * @ignore
-   */
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method,@typescript-eslint/no-empty-function
-  public ngOnInit(): void {}
 }

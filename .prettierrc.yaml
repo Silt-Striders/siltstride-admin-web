@@ -1,2 +1,3 @@
 singleQuote: false
 trailingComma: none
+htmlWhitespaceSensitivity: ignore

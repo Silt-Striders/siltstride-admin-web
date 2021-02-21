@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { User } from "@core/model/user.model";
+import { User } from "@core/model";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { ActivatedRoute, Data } from "@angular/router";
+import { ActivatedRoute, Data, UrlSegment } from "@angular/router";
 
 /**
  * Layout Container Component defining the structure of the application
@@ -21,9 +21,20 @@ export class LayoutComponent implements OnInit {
    * Helper accessor retrieving the current {@link User}
    * @returns {Observable<User>} Observable containing the logged in user
    */
-  public get user(): Observable<User> {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return this.route.data.pipe(map((data: Data) => data.user));
+  public get user$(): Observable<User> {
+    return this.route.data.pipe(map((data: Data) => data["user"] as User));
+  }
+
+  /**
+   * Helper accessor retrieving the current URL for use in displaying ephemeral
+   * [Header]{@link HeaderComponent} links
+   * @returns {Observable<Array<UrlSegment>>} Observable containing the current
+   * URL
+   */
+  public get url$(): Observable<string> {
+    return this.route.url.pipe(
+      map((segments: Array<UrlSegment>) => segments.join(""))
+    );
   }
 
   /**

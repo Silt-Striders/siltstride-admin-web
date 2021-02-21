@@ -11,9 +11,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CoreModule } from "@core/core.module";
 import { SharedModule } from "@shared/shared.module";
 import { AuthRedirectComponent } from "./layout/auth-redirect/presentation/auth-redirect.component";
-import { AuthRedirectContainer } from "./layout/auth-redirect/container/auth-redirect.container";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import { TokenInterceptor } from "@core/interceptor/token.interceptor";
+import { TokenInterceptor } from "@core/interceptor";
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { TokenInterceptor } from "@core/interceptor/token.interceptor";
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    AuthRedirectComponent,
-    AuthRedirectContainer
+    AuthRedirectComponent
   ],
   imports: [
     BrowserModule,
