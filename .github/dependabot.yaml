@@ -1,0 +1,21 @@
+#
+# Documentation:
+# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+#
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "RobDanHill"
+    commit-message:
+      prefix: "NPM Production"
+      prefix-development: "NPM Development"
+      include: "scope"
+    labels:
+      - "npm"
+      - "dependencies"
+    reviewers:
+      - "Silt-Striders/siltstride-admin-web-team"
