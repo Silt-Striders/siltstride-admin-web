@@ -14,4 +14,8 @@ Followed these guides for this pattern:
 * [An enterprise approach to the Smart and Dumb components pattern in Angular](https://medium.com/generic-ui/an-enterprise-approach-to-the-smart-and-dumb-components-pattern-in-angular-37b6000f91de)
 
 ## Getting Started
-After cloning the repository, one can simply run `npm run start` in a terminal to start the webpack dev server and see live updates.
+After cloning the repository, run the following commands in a terminal to get started: 
+1. `npm install`
+2. `npm run start` 
+
+Running the 2nd command starts the webpack dev server and you will see live updates.
