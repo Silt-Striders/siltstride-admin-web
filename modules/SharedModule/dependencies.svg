@@ -24,59 +24,59 @@
 <title>cluster_SharedModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-268 693,-268 693,-70 8,-70"/>
 </g>
+<g id="clust6" class="cluster">
+<title>cluster_SharedModule_imports</title>
+<polygon fill="none" stroke="black" points="529,-78 529,-130 681,-130 681,-78 529,-78"/>
+</g>
 <g id="clust2" class="cluster">
 <title>cluster_SharedModule_declarations</title>
-<polygon fill="none" stroke="black" points="181,-78 181,-130 682,-130 682,-78 181,-78"/>
+<polygon fill="none" stroke="black" points="20,-78 20,-130 521,-130 521,-78 20,-78"/>
 </g>
 <g id="clust7" class="cluster">
 <title>cluster_SharedModule_exports</title>
 <polygon fill="none" stroke="black" points="16,-208 16,-260 685,-260 685,-208 16,-208"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_SharedModule_imports</title>
-<polygon fill="none" stroke="black" points="21,-78 21,-130 173,-130 173,-78 21,-78"/>
-</g>
 <!-- SafeResourceUrlPipe -->
 <g id="node1" class="node">
 <title>SafeResourceUrlPipe</title>
-<polygon fill="#ffffb3" stroke="black" points="674,-122 538,-122 538,-86 674,-86 674,-122"/>
-<text text-anchor="middle" x="606" y="-99.8" font-family="Times,serif" font-size="14.00">SafeResourceUrlPipe</text>
+<polygon fill="#ffffb3" stroke="black" points="513,-122 377,-122 377,-86 513,-86 513,-122"/>
+<text text-anchor="middle" x="445" y="-99.8" font-family="Times,serif" font-size="14.00">SafeResourceUrlPipe</text>
 </g>
 <!-- SharedModule -->
 <g id="node4" class="node">
 <title>SharedModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="313.42,-187 310.42,-191 289.42,-191 286.42,-187 214.58,-187 214.58,-151 313.42,-151 313.42,-187"/>
-<text text-anchor="middle" x="264" y="-164.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="403.42,-187 400.42,-191 379.42,-191 376.42,-187 304.58,-187 304.58,-151 403.42,-151 403.42,-187"/>
+<text text-anchor="middle" x="354" y="-164.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
 </g>
 <!-- SafeResourceUrlPipe&#45;&gt;SharedModule -->
 <g id="edge1" class="edge">
 <title>SafeResourceUrlPipe&#45;&gt;SharedModule</title>
-<path fill="none" stroke="black" d="M628.75,-122.27C628.75,-140.56 628.75,-166 628.75,-166 628.75,-166 323.57,-166 323.57,-166"/>
-<polygon fill="black" stroke="black" points="323.57,-162.5 313.57,-166 323.57,-169.5 323.57,-162.5"/>
+<path fill="none" stroke="black" d="M389.98,-122.11C389.98,-122.11 389.98,-140.99 389.98,-140.99"/>
+<polygon fill="black" stroke="black" points="386.48,-140.99 389.98,-150.99 393.48,-140.99 386.48,-140.99"/>
 </g>
 <!-- ThemeChooserComponent -->
 <g id="node2" class="node">
 <title>ThemeChooserComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="519.36,-122 352.64,-122 352.64,-86 519.36,-86 519.36,-122"/>
-<text text-anchor="middle" x="436" y="-99.8" font-family="Times,serif" font-size="14.00">ThemeChooserComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="358.36,-122 191.64,-122 191.64,-86 358.36,-86 358.36,-122"/>
+<text text-anchor="middle" x="275" y="-99.8" font-family="Times,serif" font-size="14.00">ThemeChooserComponent</text>
 </g>
 <!-- ThemeChooserComponent&#45;&gt;SharedModule -->
 <g id="edge2" class="edge">
 <title>ThemeChooserComponent&#45;&gt;SharedModule</title>
-<path fill="none" stroke="black" d="M408.11,-122.01C408.11,-138.05 408.11,-159 408.11,-159 408.11,-159 323.59,-159 323.59,-159"/>
-<polygon fill="black" stroke="black" points="323.59,-155.5 313.59,-159 323.59,-162.5 323.59,-155.5"/>
+<path fill="none" stroke="black" d="M331.61,-122.11C331.61,-122.11 331.61,-140.99 331.61,-140.99"/>
+<polygon fill="black" stroke="black" points="328.11,-140.99 331.61,-150.99 335.11,-140.99 328.11,-140.99"/>
 </g>
 <!-- UserProfileComponent -->
 <g id="node3" class="node">
 <title>UserProfileComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="334.86,-122 189.14,-122 189.14,-86 334.86,-86 334.86,-122"/>
-<text text-anchor="middle" x="262" y="-99.8" font-family="Times,serif" font-size="14.00">UserProfileComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="173.86,-122 28.14,-122 28.14,-86 173.86,-86 173.86,-122"/>
+<text text-anchor="middle" x="101" y="-99.8" font-family="Times,serif" font-size="14.00">UserProfileComponent</text>
 </g>
 <!-- UserProfileComponent&#45;&gt;SharedModule -->
 <g id="edge3" class="edge">
 <title>UserProfileComponent&#45;&gt;SharedModule</title>
-<path fill="none" stroke="black" d="M264,-122.11C264,-122.11 264,-140.99 264,-140.99"/>
-<polygon fill="black" stroke="black" points="260.5,-140.99 264,-150.99 267.5,-140.99 260.5,-140.99"/>
+<path fill="none" stroke="black" d="M125.14,-122.02C125.14,-139.37 125.14,-163 125.14,-163 125.14,-163 294.62,-163 294.62,-163"/>
+<polygon fill="black" stroke="black" points="294.62,-166.5 304.62,-163 294.62,-159.5 294.62,-166.5"/>
 </g>
 <!-- SafeResourceUrlPipe  -->
 <g id="node6" class="node">
@@ -87,8 +87,8 @@
 <!-- SharedModule&#45;&gt;SafeResourceUrlPipe  -->
 <g id="edge5" class="edge">
 <title>SharedModule&#45;&gt;SafeResourceUrlPipe </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M313.53,-173C403.2,-173 583.25,-173 583.25,-173 583.25,-173 583.25,-205.7 583.25,-205.7"/>
-<polygon fill="black" stroke="black" points="579.75,-205.7 583.25,-215.7 586.75,-205.7 579.75,-205.7"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M403.27,-175C470.41,-175 582.38,-175 582.38,-175 582.38,-175 582.38,-205.98 582.38,-205.98"/>
+<polygon fill="black" stroke="black" points="578.88,-205.98 582.38,-215.98 585.88,-205.98 578.88,-205.98"/>
 </g>
 <!-- ThemeChooserComponent  -->
 <g id="node7" class="node">
@@ -99,8 +99,8 @@
 <!-- SharedModule&#45;&gt;ThemeChooserComponent  -->
 <g id="edge6" class="edge">
 <title>SharedModule&#45;&gt;ThemeChooserComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M313.35,-180C372.47,-180 463.64,-180 463.64,-180 463.64,-180 463.64,-205.72 463.64,-205.72"/>
-<polygon fill="black" stroke="black" points="460.14,-205.72 463.64,-215.72 467.14,-205.72 460.14,-205.72"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M376.02,-187.11C376.02,-187.11 376.02,-205.99 376.02,-205.99"/>
+<polygon fill="black" stroke="black" points="372.52,-205.99 376.02,-215.99 379.52,-205.99 372.52,-205.99"/>
 </g>
 <!-- UserInterfaceModule  -->
 <g id="node8" class="node">
@@ -111,8 +111,8 @@
 <!-- SharedModule&#45;&gt;UserInterfaceModule  -->
 <g id="edge7" class="edge">
 <title>SharedModule&#45;&gt;UserInterfaceModule </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M264,-187.11C264,-187.11 264,-205.99 264,-205.99"/>
-<polygon fill="black" stroke="black" points="260.5,-205.99 264,-215.99 267.5,-205.99 260.5,-205.99"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M317.7,-187.11C317.7,-187.11 317.7,-205.99 317.7,-205.99"/>
+<polygon fill="black" stroke="black" points="314.2,-205.99 317.7,-215.99 321.2,-205.99 314.2,-205.99"/>
 </g>
 <!-- UserProfileComponent  -->
 <g id="node9" class="node">
@@ -123,20 +123,20 @@
 <!-- SharedModule&#45;&gt;UserProfileComponent  -->
 <g id="edge8" class="edge">
 <title>SharedModule&#45;&gt;UserProfileComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M214.69,-175C191.67,-175 169.27,-175 169.27,-175 169.27,-175 169.27,-205.98 169.27,-205.98"/>
-<polygon fill="black" stroke="black" points="165.77,-205.98 169.27,-215.98 172.77,-205.98 165.77,-205.98"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M304.73,-175C225.02,-175 76.61,-175 76.61,-175 76.61,-175 76.61,-205.98 76.61,-205.98"/>
+<polygon fill="black" stroke="black" points="73.11,-205.98 76.61,-215.98 80.11,-205.98 73.11,-205.98"/>
 </g>
 <!-- UserInterfaceModule -->
 <g id="node5" class="node">
 <title>UserInterfaceModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="164.71,-122 161.71,-126 140.71,-126 137.71,-122 29.29,-122 29.29,-86 164.71,-86 164.71,-122"/>
-<text text-anchor="middle" x="97" y="-99.8" font-family="Times,serif" font-size="14.00">UserInterfaceModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="672.71,-122 669.71,-126 648.71,-126 645.71,-122 537.29,-122 537.29,-86 672.71,-86 672.71,-122"/>
+<text text-anchor="middle" x="605" y="-99.8" font-family="Times,serif" font-size="14.00">UserInterfaceModule</text>
 </g>
 <!-- UserInterfaceModule&#45;&gt;SharedModule -->
 <g id="edge4" class="edge">
 <title>UserInterfaceModule&#45;&gt;SharedModule</title>
-<path fill="none" stroke="black" d="M97,-122.02C97,-139.37 97,-163 97,-163 97,-163 204.35,-163 204.35,-163"/>
-<polygon fill="black" stroke="black" points="204.35,-166.5 214.35,-163 204.35,-159.5 204.35,-166.5"/>
+<path fill="none" stroke="black" d="M627.62,-122.02C627.62,-139.37 627.62,-163 627.62,-163 627.62,-163 413.23,-163 413.23,-163"/>
+<polygon fill="black" stroke="black" points="413.23,-159.5 403.23,-163 413.23,-166.5 413.23,-159.5"/>
 </g>
 </g>
 </svg>
