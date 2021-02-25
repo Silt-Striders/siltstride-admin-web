@@ -59,19 +59,19 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#darkThemeStyleSheet" title="src/app/core/service/theme.service.ts"><b>darkThemeStyleSheet</b>&nbsp;&nbsp;&nbsp;(src/.../theme.service.ts)</a>
+                            <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
                         </li>
                         <li>
-                            <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                            <a href="#mockToken" title="src/app/core/mock/token.mock.ts"><b>mockToken</b>&nbsp;&nbsp;&nbsp;(src/.../token.mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mockUser" title="src/app/core/mock/user.mock.ts"><b>mockUser</b>&nbsp;&nbsp;&nbsp;(src/.../user.mock.ts)</a>
                         </li>
                         <li>
                             <a href="#mouseParallaxHelper" title="src/app/core/helper/mouse-parallax.helper.ts"><b>mouseParallaxHelper</b>&nbsp;&nbsp;&nbsp;(src/.../mouse-parallax.helper.ts)</a>
                         </li>
                         <li>
                             <a href="#throwIfAlreadyLoaded" title="src/app/core/import.guard.ts"><b>throwIfAlreadyLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../import.guard.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#toggleDarkThemeStyleSheet" title="src/app/core/service/theme.service.ts"><b>toggleDarkThemeStyleSheet</b>&nbsp;&nbsp;&nbsp;(src/.../theme.service.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -80,69 +80,6 @@
     </table>
 </section>
 
-    <h3>src/app/core/service/theme.service.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="darkThemeStyleSheet"></a>
-                        <span class="name">
-                            <b>
-                            darkThemeStyleSheet</b>
-                            <a href="#darkThemeStyleSheet"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>StyleSheet</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>document.styleSheets[4]</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="toggleDarkThemeStyleSheet"></a>
-                        <span class="name">
-                            <b>
-                            toggleDarkThemeStyleSheet</b>
-                            <a href="#toggleDarkThemeStyleSheet"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>(
-  styleSheet: StyleSheet,
-  enable: boolean
-): void &#x3D;&gt; {
-  darkThemeStyleSheet.disabled &#x3D; !enable;
-}</code>
-                        </td>
-                    </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Helper function enabling/disabling the dark-theme.css
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet">StyleSheet</a></p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-</section>
     <h3>src/environments/environment.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -168,6 +105,66 @@
                             <i>Default value : </i><code>{
   production: false,
 }</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/core/mock/token.mock.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mockToken"></a>
+                        <span class="name">
+                            <b>
+                            mockToken</b>
+                            <a href="#mockToken"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/TokenWrapper.html" target="_self" >TokenWrapper</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new TokenWrapper()</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/core/mock/user.mock.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mockUser"></a>
+                        <span class="name">
+                            <b>
+                            mockUser</b>
+                            <a href="#mockUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new User()</code>
                         </td>
                     </tr>
 

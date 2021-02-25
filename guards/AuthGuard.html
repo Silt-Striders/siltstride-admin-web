@@ -62,6 +62,13 @@
                 <code>src/app/core/guard/auth.guard.ts</code>
             </p>
 
+                <p class="comment">
+                <h3>Description</h3>
+                </p>
+                <p class="comment">
+                    <p>Router guard vetting access to routes based on authentication status</p>
+
+                </p>
 
 
 
@@ -95,66 +102,6 @@
     </table>
 </section>
 
-                <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(authService: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/guard/auth.guard.ts:15</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>authService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
                 <section>
     
@@ -185,15 +132,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/core/guard/auth.guard.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/core/guard/auth.guard.ts:33</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Determines whether a route can be activated based on user authentication status</p>
+                    <div class="io-description"><p>Determines whether a route can be activated based on
+<a href="../classes/TokenWrapper.html#accessToken">access token</a> validity</p>
 </div>
 
                     <div class="io-description">
@@ -273,14 +221,23 @@ import { Observable } from &quot;rxjs&quot;;
 import { AuthService } from &quot;@core/service&quot;;
 import { tap } from &quot;rxjs/operators&quot;;
 
+/**
+ * Router guard vetting access to routes based on authentication status
+ */
 @Injectable({
   providedIn: &quot;root&quot;
 })
 export class AuthGuard implements CanActivate {
+  /**
+   * @ignore
+   * @param {AuthService} authService
+   * @param {Router} router
+   */
   constructor(private authService: AuthService, private router: Router) {}
 
   /**
-   * Determines whether a route can be activated based on user authentication status
+   * Determines whether a route can be activated based on
+   * [access token]{@link TokenWrapper#accessToken} validity
    * @param {ActivatedRouteSnapshot} next The route attempting to be navigated to
    * @param {RouterStateSnapshot} state Current Router state
    * @returns {Observable&lt;boolean&gt;} Observable containing the token validity status
