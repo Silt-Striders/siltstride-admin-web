@@ -126,6 +126,9 @@ export class User {
   public get mfaEnabled(): boolean {
     return this.mfa_enabled;
   }
+  public set mfaEnabled(value: boolean) {
+    this.mfa_enabled = value;
+  }
 
   /**
    * @ignore
@@ -213,6 +216,9 @@ export class User {
   public get premiumType(): number {
     return this.premium_type;
   }
+  public set premiumType(value: number) {
+    this.premium_type = value;
+  }
 
   /**
    * @ignore
@@ -227,6 +233,9 @@ export class User {
    */
   public get publicFlags(): number {
     return this.public_flags;
+  }
+  public set publicFlags(value: number) {
+    this.public_flags = value;
   }
 
   /**

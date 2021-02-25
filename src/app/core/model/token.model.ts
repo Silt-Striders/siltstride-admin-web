@@ -25,6 +25,10 @@ export class TokenWrapper {
     return this.access_token;
   }
 
+  public set accessToken(value: string) {
+    this.access_token = value;
+  }
+
   /**
    * @ignore
    * @type {string}
@@ -39,6 +43,10 @@ export class TokenWrapper {
    */
   public get tokenType(): string {
     return this.token_type;
+  }
+
+  public set tokenType(value: string) {
+    this.token_type = value;
   }
 
   /**
@@ -63,6 +71,10 @@ export class TokenWrapper {
     return this.expires_in;
   }
 
+  public set expiresIn(value: Date) {
+    this.expires_in = value;
+  }
+
   /**
    * @ignore
    * @type {Array<string>}
@@ -70,6 +82,7 @@ export class TokenWrapper {
    */
   // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle, id-blacklist, id-match
   private _scope: Array<string>;
+
   /**
    * The scopes associated to the token
    * @returns {Array<string>}
@@ -77,6 +90,7 @@ export class TokenWrapper {
   public get scope(): Array<string> {
     return this._scope;
   }
+
   @Type(() => String)
   @Transform((params: TransformFnParams) => (<string>params.value).split("+"))
   public set scope(value: Array<string>) {

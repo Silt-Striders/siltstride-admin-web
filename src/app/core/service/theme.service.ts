@@ -2,8 +2,6 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { Theme } from "@core/model";
 
-const darkThemeStyleSheet: StyleSheet = document.styleSheets[4];
-
 /**
  * Adapted code from:
  *
@@ -16,6 +14,13 @@ const darkThemeStyleSheet: StyleSheet = document.styleSheets[4];
   providedIn: "root"
 })
 export class ThemeService {
+  /**
+   * dark-theme.css stylesheet
+   * @type {StyleSheet} StyleSheet object referencing the Dark theme
+   * @private
+   */
+  private readonly darkThemeStyleSheet: StyleSheet = document.styleSheets[4];
+
   /**
    * Stores the currently selected {@link Theme}
    * @type {BehaviorSubject<Theme>} Subject containing the last chosen theme
@@ -30,10 +35,7 @@ export class ThemeService {
     this.themeSubject = new BehaviorSubject<Theme>(
       (localStorage.getItem("siltstrideVisualTheme") || "light") as Theme
     );
-    toggleDarkThemeStyleSheet(
-      darkThemeStyleSheet,
-      this.themeSubject.value === Theme.Dark
-    );
+    this.toggleDarkThemeStyleSheet(this.themeSubject.value === Theme.Dark);
   }
 
   /**
@@ -46,7 +48,7 @@ export class ThemeService {
       "siltstrideVisualTheme",
       this.themeSubject.value.toString()
     );
-    toggleDarkThemeStyleSheet(darkThemeStyleSheet, theme === Theme.Dark);
+    this.toggleDarkThemeStyleSheet(theme === Theme.Dark);
   }
 
   /**
@@ -57,17 +59,13 @@ export class ThemeService {
   public get theme$(): Observable<Theme> {
     return this.themeSubject.asObservable();
   }
-}
 
-/**
- * Helper function enabling/disabling the dark-theme.css
- * [StyleSheet]{@link https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet}
- * @param {StyleSheet} styleSheet
- * @param {boolean} enable
- */
-const toggleDarkThemeStyleSheet = (
-  styleSheet: StyleSheet,
-  enable: boolean
-): void => {
-  darkThemeStyleSheet.disabled = !enable;
-};
+  /**
+   * Helper method enabling/disabling the dark-theme.css
+   * [StyleSheet]{@link https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet}
+   * @param {boolean} enable
+   */
+  private toggleDarkThemeStyleSheet(enable: boolean): void {
+    this.darkThemeStyleSheet.disabled = !enable;
+  }
+}

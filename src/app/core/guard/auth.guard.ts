@@ -9,14 +9,23 @@ import { Observable } from "rxjs";
 import { AuthService } from "@core/service";
 import { tap } from "rxjs/operators";
 
+/**
+ * Router guard vetting access to routes based on authentication status
+ */
 @Injectable({
   providedIn: "root"
 })
 export class AuthGuard implements CanActivate {
+  /**
+   * @ignore
+   * @param {AuthService} authService
+   * @param {Router} router
+   */
   constructor(private authService: AuthService, private router: Router) {}
 
   /**
-   * Determines whether a route can be activated based on user authentication status
+   * Determines whether a route can be activated based on
+   * [access token]{@link TokenWrapper#accessToken} validity
    * @param {ActivatedRouteSnapshot} next The route attempting to be navigated to
    * @param {RouterStateSnapshot} state Current Router state
    * @returns {Observable<boolean>} Observable containing the token validity status
